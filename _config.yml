@@ -1,0 +1,44 @@
+title:            Ash Tyndall
+logo:             square200.jpg
+disqus_shortname: atyndall
+search:           true
+# Change url to your domain. Leave localhost server or blank when working locally.
+url:              http://ash.id.au
+
+# Owner/author information
+owner:
+  name:           Ash Tyndall
+  email:          hi@ash.id.au
+  # Social networking links used in footer. Update and remove as you like.
+  twitter: atyndall            
+  github: atyndall         
+  linkedin: ashtyndall/           
+  # For Google Authorship https://plus.google.com/authorship
+  google_plus: 
+
+# Analytics and webmaster tools stuff goes here
+google_analytics: UA-29830465-2      
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    Australia/Perth
+future:      true
+pygments:    true
+markdown:    kramdown
+
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+permalink:   /post/:title/
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: false
+
+  coderay:
+    coderay_line_numbers: 
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: class
+

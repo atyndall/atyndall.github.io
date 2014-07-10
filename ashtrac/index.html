@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr"><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ashtrac - Portfolio</title>
+
+<meta http-equiv="imagetoolbar" content="no">
+<link rel="stylesheet" href="./resources/layout.css" type="text/css">
+<script type="text/javascript" async="" src="./resources/ga.js"></script><script src="./resources/jquery.min.js" type="text/javascript"></script> 
+<script src="./resources/jquery-ui.min.js" type="text/javascript"></script> 
+<script src="./resources/popSlides.js" type="text/javascript"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(".pop").popSlides({force_square:true});
+  });
+</script>
+</head>
+<body id="top">
+<div class="wrapper col1">
+  <div id="topbar"></div>
+</div>
+<div class="wrapper col2">
+  <div id="header">
+	<div id="logo">
+		<img src="./resources/logo_large.jpg" alt="ashtrac">
+    </div>
+    <br class="clear">
+  </div>
+</div>
+<div class="wrapper col3">
+  <div id="services">
+    <h3 style="text-transform:none;">This is a static copy of my portfolio of work completed under the Ashtrac business name.<br/>Please note, RentACoder and vWorker have now been merged into Freelancer.<br/>My migrated profile page there can be found <a href="https://www.freelancer.com.au/u/ashtrac.html">here</a>.</h3>
+    <p>Table of contents<br><span style="font-size:10pt;">Hover for names, click for descriptions</span></p>
+    <p></p>
+    <ul>
+      <li><a href="#encode"><strong>Scalable File Encoding</strong><img src="./resources/nav_encode.gif" alt=""></a></li>
+      <li><a href="#verdic"><strong>Verdic Health Assessment</strong><img src="./resources/nav_verdic.gif" alt=""></a></li>
+      <li><a href="#mailmerge"><strong>Extensible Mail Merge</strong><img src="./resources/nav_mailmerge.gif" alt=""></a></li>
+      <li class="last"><a href="#10questionnaire"><strong>Web Design Questionnaire</strong><img src="./resources/nav_10questionnaire.gif" alt=""></a></li>
+      <li><a href="#yellowpages"><strong>Yellow Pages Scraper</strong><img src="./resources/nav_yellowpages.gif" alt=""></a></li>
+      <li><a href="#mattresspickup"><strong>Appointment Maker</strong><img src="./resources/nav_mattresspickup.gif" alt=""></a></li>
+      <li><a href="#sustainability"><strong>Sustainability Assessment</strong><img src="./resources/nav_sustainability.gif" alt=""></a></li>
+      <li class="last"><a href="#foreclosure"><strong>Foreclosure Website</strong><img src="./resources/nav_foreclosure.gif" alt=""></a></li>
+    </ul>
+    <br class="clear">
+  </div>
+</div>
+<div class="wrapper col5">
+
+  <div id="container">
+    <h2 id="encode">Scalable File Encoding</h2>
+    <p><strong>Rating: </strong>10/10 avg over 2 related projects.</p>
+    <p><strong>Feedback: </strong><em>Excellent work! Great job, I would work with Asht again in a heartbeat.</em>, <em>Asht is a excellent worker! he made a few mistakes, but he always worked hard to make sure problems were corrected and everything was done to my expectations. I would absolutely work with Asht again.</em></p>
+    <p><strong>Employer: </strong>diffuse via vWorker.com</p>
+    <p><strong>Description</strong></p>
+    <p>I developed for diffuse a PHP backend for an iPhone app which would allow people to upload raw picture and video files, have then catalogued in a large database with geographical and user metadata, and then converted into a variety of different formats and sizes for different purposes.</p>
+    <p>The iPhone app would post metadata and the uploaded file to a web server, which would validate the request and initially resolve the metadata, placing it in a database and uploading the file itself to Amazon S3.</p>
+    <p>The encoding servers would then take over, each downloading a raw file from S3, encoding it into different formats, then uploading those encodings to S3 again, where it could be accessed however the client wished.</p>
+    <p>Prominent features include:</p>
+    <ul>
+      <li>Scalability: As the structure diagram demonstrates, any number of encoding servers could be used to add additional processing power to the array with minimum disruption.</li>
+      <li>An inexpensive toolchain: The encoding process for both pictures and video were powered by open source software (ImageMagick and ffmpeg respectively), acquired and run with zero cost.</li>
+      <li>Cross-platform compatibility: With little modification, the backend could run on any platform supported by PHP, including Windows, Mac OS X and Linux.</li>
+      <li>Easily extensible: with little modification, new encoding processes and logical steps can be added.</li>
+    </ul>
+    <p><strong>Gallery</strong></p>
+    <div class="pop">
+      <li><img src="./resources/encode/structure.gif"><span>Structure of the backend created</span></li>
+    </div>
+  </div>
+  
+  <div id="container">
+    <h2 id="verdic">Verdic Health Assessment</h2>
+    <p><strong>Rating: </strong>9.7/10 avg over 3 related projects.</p>
+    <p><strong>Feedback: </strong><em>Very good communication, professional work.</em>, <em>Performed work per specs, kept me updated, provided suggestions to improve project. Excellent work.</em></p>
+    <p><strong>Employer: </strong>Level 270, LLC via vWorker.com</p>
+    <p><strong>Description</strong></p>
+    <p>The Verdic Health Assessment is an 11 page PHP web-application that asks a variety of questions, and records the answer's in a persistent database upon submission.</p>
+    <p>Prominent features include:</p>
+    <ul>
+      <li>Non-linear navigation (i.e. a user can go back to page 4 from page 7 to correct information if they wish) facilitated by a hyper-linked progress bar.</li>
+      <li>Backend data validation with specific and useful error messages.</li>
+      <li>Fluid and easy to use username/password based administrative interface.</li>
+      <li>Easy extensibility on validation, page and individual form element levels.</li>
+      <li>User sessions are remembered without prompting, meaning they can leave and resume their session for up to a day after starting.</li>
+    </ul>
+    <p><strong>Gallery<a style="cursor:help;" title="Client specific information has been removed in these images">*</a></strong></p>
+    <div class="pop">
+      <li><img src="./resources/verdic/gallery/1.jpg"><span>First page, blank</span></li>
+      <li><img src="./resources/verdic/gallery/2.jpg"><span>First page, filled in, not submitted</span></li>
+      <li><img src="./resources/verdic/gallery/3.jpg"><span>First page, submitted, errors found</span></li>
+      <li><img src="./resources/verdic/gallery/5.jpg"><span>Viewing the first page after it has been submited</span></li>
+      <li><img src="./resources/verdic/gallery/4.jpg"><span>Second page, various possible field types</span></li>
+      <li><img src="./resources/verdic/gallery/7.jpg"><span>Sixth page, more possible field types</span></li>
+      <li><img src="./resources/verdic/gallery/8.jpg"><span>"I Agree" page example (client specific information removed)</span></li>
+      <li><img src="./resources/verdic/gallery/12.jpg"><span>Admin interface - home</span></li>
+      <li><img src="./resources/verdic/gallery/13.jpg"><span>Admin interface - viewing a record</span></li>
+    </div>
+  </div>
+  
+  <div id="container">
+    <h2 id="mailmerge">Extensible Mail Merge</h2>
+    <p><strong>Rating: </strong>10/10</p>
+    <p><strong>Feedback: </strong><em>Fast, responsive, made unsolicited suggestions to improve my original RFP which were incorporated into the final product. Good, clean work. Hire him!</em></p>
+    <p><strong>Employer: </strong>lownoisehighcontent via vWorker.com</p>
+    <p><strong>Description</strong></p>
+    <p>This web-based mail merge interface was designed specifically to be simple to use but also highly adaptable to a power user. An infinite number of merge templates can be including (or custom written on the spot) which can include any token (replacement value) that has been installed in the system.</p>
+    <p>These tokens are highly extensible; they can range from simply substituting a word or phrase, to looking up or calculating complex statistics or values. The tokens included in the client's solution could perform Google searches, look up Alexia rankings and website registration data, among other things.</p>
+    <p>Prominent features include:</p>
+    <ul>
+      <li>Extensibility: Tokens are provided by simple plugin code that can be added or removed at will.</li>
+      <li>Clean interface: The solution is designed to be highly customisable, but still easy to use.</li>
+      <li>Cross-platform: Because it is a web-application, the solution can be accessed from anywhere with any operating system.</li>
+    </ul>
+    <p><strong>Gallery</strong></p>
+    <div class="pop">
+      <li><img src="./resources/mailmerge/1.jpg"><span>Step 1: Choosing a template and adding mail merge tokens</span></li>
+      <li><img src="./resources/mailmerge/2.jpg"><span>Step 2: Providing information required by tokens to complete their specific tasks</span></li>
+      <li><img src="./resources/mailmerge/3.jpg"><span>Step 3: Recieving processed and merged template, as well as any other token-specific messages</span></li>
+    </div>
+  </div>
+  
+  <div id="container">
+    <h2 id="10questionnaire">Web Design Questionnaire</h2>
+    <p><strong>Rating: </strong>10/10</p>
+    <p><strong>Feedback: </strong><em>Rock-solid work! Great communication, very knowledgeable and will consider Asht for all my future coding projects!</em></p>
+    <p><strong>Employer: </strong>TEN STUDIOS via vWorker.com</p>
+    <p><strong>Description</strong></p>
+    <p>This solution was created for a web-design firm to record and validate the data received from the pages of a potential client questionnaire.</p>
+    <p>Prominent features include:</p>
+    <ul>
+      <li>Ability to save a form session to an email address, and have it persistently stored until recovered for continued filling-out.</li>
+      <li>Frontend javascript based authentication, which provides immediate feedback of errors when submitting.</li>
+      <li>Email-based format of results.</li>
+      <li>Per-page extensibility.</li>
+    </ul>
+    <p><strong>Gallery</strong></p>
+    <div class="pop">
+      <li><img src="./resources/mailmerge/1.jpg"><span>Step 1: Choosing a template and adding mail merge tokens</span></li>
+      <li><img src="./resources/mailmerge/2.jpg"><span>Step 2: Providing information required by tokens to complete their specific tasks</span></li>
+      <li><img src="./resources/mailmerge/3.jpg"><span>Step 3: Recieving processed and merged template, as well as any other token-specific messages</span></li>
+    </div>
+  </div>
+  
+  <div id="container">
+    <h2 id="yellowpages">Yellow Pages Scraper</h2>
+    <p><strong>Rating: </strong>10/10</p>
+    <p><strong>Feedback: </strong><em>Very professional job, extremely impressed with his work!</em></p>
+    <p><strong>Employer: </strong>AshanPD via vWorker.com</p>
+    <p><strong>Description</strong></p>
+    <p>This scraper is designed to have a YellowPages.com url entered into it. Once started it will then navigate through all the pages in that result listing, saving the results into a large spreadsheet compatible file. It is a web-application, but it is running within a Windows program, allowing it to be used without suitable web hosting.</p>
+    <p>Prominent features include:</p>
+    <ul>
+      <li>Crash recovery: The scraper keeps a note of where in its scrape it is at all times, so if the program failes or crashes for any reason, when it is next run the option of resuming where the scraper stopped is presented.</li>
+      <li>Cross-platform: While the program runs in a Windows environment, it can easily be ported to any platform, including the web, due to its use of the platform-independant programming language, PHP.</li>
+      <li>CSV support: CSV, or Comma Seperated Values is the spreadsheet format output by the program. This format is supported by every mainstream spreadsheet program, thus not tying you into a specific platform.</li>
+    </ul>
+    <p><strong>Gallery</strong></p>
+    <div class="pop">
+      <li><img src="./resources/10questionnaire/gallery/2.jpg"><span>Top of page 1</span></li>
+      <li><img src="./resources/10questionnaire/gallery/1b.jpg"><span>Bottom of page 1, blank</span></li>
+      <li><img src="./resources/10questionnaire/gallery/7.jpg"><span>Javascript-based validation</span></li>
+      <li><img src="./resources/10questionnaire/gallery/3.jpg"><span>Bottom of page 2, blank</span></li>
+      <li><img src="./resources/10questionnaire/gallery/4.jpg"><span>Result of clicking save button</span></li>
+      <li><img src="./resources/10questionnaire/gallery/5.jpg"><span>Navigating to ?restore</span></li>
+      <li><img src="./resources/10questionnaire/gallery/6.jpg"><span>Result of submitting form</span></li>
+    </div>
+  </div>
+  
+  <div id="container">
+    <h2 id="mattresspickup">Appointment Maker</h2>
+    <p><strong>Rating: </strong>10/10</p>
+    <p><strong>Feedback: </strong><em>EXCELLENT WORKER to work with. Very quick and easy to deal with.</em></p>
+    <p><strong>Employer: </strong>SFVEGAS via vWorker.com</p>
+    <p><strong>Description</strong></p>
+    <p>This web-application was developed for a mattress collection service that the client provided. It allows a user to enter contact and pickup details, which are first validated, and are then passed onto the client via email. The From address is modified by the script, allowing the client to click Reply and confirm the appointment in a personalised manner.</p>
+    <p>Prominent features include:</p>
+    <ul>
+      <li>Backend validation: Only allows times and dates that the client wishes pickup to occur on, prevents past dates. Also limits service by ZIP code provided.</li>
+      <li>Price calculation: User enters the amount of items being collected and the application informs the client of the estimated total price.</li>
+    </ul>
+    <p><strong>Gallery<a style="cursor:help;" title="Client specific information has been removed in these images">*</a></strong></p>
+    <div class="pop">
+      <li><img src="./resources/mattresspickup/1.jpg"><span>1st Stage</span></li>
+      <li><img src="./resources/mattresspickup/2.jpg"><span>Validation failure</span></li>
+      <li><img src="./resources/mattresspickup/5.jpg"><span>2nd Stage (asking for pickup time)</span></li>
+      <li><img src="./resources/mattresspickup/8.jpg"><span>Form submitted</span></li>
+    </div>
+  </div>
+  
+  <div id="container">
+    <h2 id="sustainability">Sustainability Assessment</h2>
+    <p><strong>Rating: </strong>8/10</p>
+    <p><strong>Feedback: </strong><em>Very good. Had a small problem using PayPal which caused the project to be delayed a few days. Apart from that, very quick and thorough. Will probably use again.</em></p>
+    <p><strong>Employer: </strong>AEAaus via vWorker.com</p>
+    <p><strong>Description</strong></p>
+    <p>This form was designed to be embedded via iframe in a page of a Joomla! installation and instead of performing data storage itself, it actually interacts with an enterprise data storage web-application. It includes its own validation, but when submitted it generates a hidden HTML form that is submitted to the actual web application when the user clicks a second "Submit" button.</p>
+    <p>Prominent features include:</p>
+    <ul>
+      <li>Backend validation with field-based feedback.</li>
+      <li>Integration with third-party content and data management systems.</li>
+    </ul>
+    <p><strong>Gallery<a style="cursor:help;" title="Client specific information has been removed in these images">*</a></strong></p>
+    <div class="pop">
+      <li><img src="./resources/yellowpages/1.jpg"><span>Starting interface</span></li>
+      <li><img src="./resources/yellowpages/2.jpg"><span>Job running</span></li>
+      <li><img src="./resources/yellowpages/3.jpg"><span>Job complete</span></li>
+      <li><img src="./resources/yellowpages/4.jpg"><span>Starting interface after the program closed with a running job</span></li>
+      <li><img src="./resources/yellowpages/5.jpg"><span>Job resume menu</span></li>
+    </div>
+  </div>
+  
+  <div id="container">
+    <h2 id="foreclosure">Foreclosure Website</h2>
+    <p><strong>Rating: </strong>10/10</p>
+    <p><strong>Feedback: </strong><em>Probably the best coder we've worked with so far. Intelligent, responsive, patient and helpful in pointing out issues not previously considered.</em></p>
+    <p><strong>Employer: </strong>reactiontm via vWorker.com</p>
+    <p><strong>Description</strong></p>
+    <p>I was in this instance requested by my client to migrate to a multimedia-based website which retaining their previous web design. In addition to this, I was asked to introduce HTTPS/SSL security, password authentication and a feedback dialog that appeared when the user attempted to leave the page.</p>
+    <p>The feedback mechanism was designed to write any responses to a text file with timestamp so that the client could access them easily from the website itself.</p>
+    <p>Prominent features include:</p>
+    <ul>
+      <li>Flash-based video presentations, with buffering and full-screen capabilities.</li>
+      <li>Password-protected page, with flat-file authentication storage.</li>
+      <li>Javascript/jQuery/jQueryUI based feedback dialog with flatfile feedback document.</li>
+    </ul>
+    <p><strong>Gallery<a style="cursor:help;" title="Client specific information has been removed in these images">*</a></strong></p>
+    <div class="pop">
+      <li><img src="./resources/foreclosure/1.jpg"><span>Home page</span></li>
+      <li><img src="./resources/foreclosure/6.jpg"><span>When trying to leave</span></li>
+      <li><img src="./resources/foreclosure/3.jpg"><span>Filling out feedback form</span></li>
+      <li><img src="./resources/foreclosure/4.jpg"><span>Submitting feedback form</span></li>
+    </div>
+  </div>
+  
+</div>
+<div class="wrapper col7">
+  <div id="copyright">
+    <ul>
+      <li class="last">Template by <a target="_blank" href="http://www.os-templates.com/" title="Open Source Templates">OS Templates</a></li>
+    </ul>
+  </div>
+</div>
+</body></html>

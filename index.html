@@ -1,0 +1,93 @@
+---
+title: atyndall
+description: "Ash is the CTO of TableSpace, as well as a IT Support Officer, Freelance Software Developer and Systems Administrator. He is completing a Bachelor of Computer Science at UWA."
+---
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+{% include head.html %}
+</head>
+
+<body id="page" class="frontpage">
+
+<header class="masthead">
+  <div class="wrap">
+        {% if site.logo != null %}
+        <a href="{{ site.url }}" class="site-logo" rel="home" title="{{ site.title }}"><img src="{{ site.url }}/images/{{ site.logo }}" width="200" height="200" alt="{{ site.title }} logo" class="animated bounceInDown"></a>
+        {% endif %}
+        <h1 class="site-title animated fadeIn"><a href="{{ site.url }}">Ash Tyndall</a></h1>
+
+        <div class="animated fadeIn" id="infotext">
+          <p>
+            Ash is
+            <ul>
+              <li>
+                the
+                <a href='http://www.tablespace.com/'>CTO &amp; Co-Founder</a>
+                of TableSpace
+              </li>
+              <li>
+                the senior
+                <a href='http://unihall.uwa.edu.au/'>IT Support Advisor</a>
+                at University Hall,
+              </li>
+              <li>
+                an
+                <a href='http://www.uwa.edu.au/people/Ash.Tyndall'>IT Support Officer</a>
+                at the University of Western Australia,
+              </li>
+              <li>
+                a
+                <a href='http://www.ashtrac.com/portfolio/'>freelance software developer</a>
+                , and
+              </li>
+              <li>a
+              <a href='http://www.ucc.asn.au/infobase/groups/wheel.ucc'>systems administrator</a>
+              at the University Computer Club.</li>
+            </ul>
+          </p>
+          <p>
+            Ash is completing a
+            <a href='http://courses.year2011.handbooks.uwa.edu.au/courses/c6/6013'>Bachelor of Computer Science</a>
+            at UWA.
+          </p>
+        </div>
+
+  </div>
+</header>
+
+{% if site.posts.size != 0 %}
+<div id="main" role="main">
+  <article>
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <h3 class="entry-title">Latest posts</h1>
+      </header>
+      <div class="entry-content">
+        <ul class="post-list">
+        {% for post in site.posts limit:5 %} 
+          <li><article><a href="{{ site.url }}{{ post.url }}">{{ post.title }} <span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></span></a></article></li>
+        {% endfor %}
+        {% if site.posts.size > 5 %}
+        <li><article><a href="{{ site.url }}/articles/">View all...</a></article></li>
+        {% endif %}
+        </ul>
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+  </article>
+</div><!-- /#main -->
+{% endif %}
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    {% include footer.html %}
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+{% include scripts.html %}          
+
+</body>
+</html>
