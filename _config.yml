@@ -14,7 +14,7 @@ owner:
   github: atyndall         
   linkedin: ashtyndall/           
   # For Google Authorship https://plus.google.com/authorship
-  google_plus: 
+  google_plus: https://plus.google.com/+AshTyndall
 
 # Analytics and webmaster tools stuff goes here
 google_analytics: UA-29830465-2      
@@ -26,7 +26,7 @@ pygments:    true
 markdown:    kramdown
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:   /post/:title/
+permalink:   /post/:year/:month/:day/:title/
 
 kramdown:
   auto_ids: true
