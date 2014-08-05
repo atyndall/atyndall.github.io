@@ -1,3 +1,6 @@
+gems: ['jekyll/scholar']
+exclude: ['package.json', 'Gruntfile.js', 'Rakefile', 'Gemfile', 'Gemfile.lock']
+
 title:            Ash Tyndall
 logo:             square200.jpg
 disqus_shortname: atyndall
@@ -22,7 +25,7 @@ google_analytics: UA-29830465-2
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Australia/Perth
 future:      true
-pygments:    true
+highlighter: true
 markdown:    kramdown
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
@@ -42,3 +45,23 @@ kramdown:
     coderay_bold_every: 10
     coderay_css: class
 
+
+scholar:
+  style: ./assets/ieee-mod.csl
+  locale: en
+
+  sort_by: none
+  order: ascending
+
+  source: ./_bibliography
+  bibliography: references.bib
+  bibliography_template: "{{reference}}"
+
+  replace_strings: true
+  join_strings:    true
+
+  details_dir:    bibliography
+  details_layout: bibtex.html
+  details_link:   Details
+
+  query: "@*"

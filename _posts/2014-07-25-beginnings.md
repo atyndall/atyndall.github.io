@@ -3,6 +3,7 @@ layout: post
 title: Beginnings
 category: articles
 comments: true
+tags: honours
 ---
 
 I'm beginning my honours course in the UWA School of Computer Science and Software Engineering this month. I'm being supervised by [Rachel Cardell-Oliver](http://people.csse.uwa.edu.au/rachel/).

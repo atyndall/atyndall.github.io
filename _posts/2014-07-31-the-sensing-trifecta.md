@@ -3,6 +3,7 @@ layout: post
 title: The Sensing Trifecta
 category: articles
 comments: true
+tags: honours
 ---
 
 One of the primary goals in my [research into occupancy]({% post_url 2014-07-25-beginnings %}) is to meet The Trifecta; low cost, low power consumption, easy assembly. This is proving to be a goal not easily achieved.
