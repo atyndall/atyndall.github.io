@@ -6,10 +6,10 @@ comments: true
 tags: honours
 ---
 
-This week I drafted and submitted my research proposal. Here is a copy converted to markdown. You can find the original in my [honours git repo](http://github.com/atyndall/honors).
+This week I drafted and submitted my research proposal. Here is a copy converted to markdown. You can find the original in my [honours git repo](http://github.com/atyndall/honours).
 
 # Non-Technical Summary
-With the proportion of elderly and mobility-impaired people growing, and the cost of small computing platforms and sensors dropping, now more than ever we can create low-cost sensor systems to use in a "smart home for the disabled." Once such sensor system is an occupancy sensor, which determines the number of people who are present in a given space. This has many applications in a such a smart home, like climate control, which studies have shown can be more efficient when computer controlled in this way.
+With the proportion of elderly and mobility-impaired people growing, and the cost of small computing platforms and sensors dropping, now more than ever we can create low-cost sensor systems to use in a "smart home for the disabled." One such sensor system is an occupancy sensor, which determines the number of people who are present in a given space. This has many applications in a such a smart home, like climate control, which studies have shown can be more efficient when computer controlled in this way.
 
 This project will build on existing research to create an occupancy sensor and accompanying detection software that are well suited for a smart home for the disabled. This system will emphasise four key areas; low cost, non-invasiveness, energy efficiency and reliability. At the end of this project, a list of components and corresponding software will be produced, so that anyone can build the sensor prototype. The prototype will also be put to the test in real world situations around the UWA campus.
 
