@@ -25,7 +25,7 @@ google_analytics: UA-29830465-2
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Australia/Perth
 future:      true
-highlighter: true
+highlighter: pygments
 markdown:    kramdown
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
