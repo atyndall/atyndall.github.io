@@ -144,16 +144,23 @@ I also use the [`fancyref`](http://www.ctan.org/tex-archive/macros/latex/contrib
 One thing that `fancyref` doesn't seem to have support for is referencing subsections. If you add these commands to your document header, it should be able to reference them;
 
 {% highlight latex %}
-% Fancyref support for subsections
+% Source; https://github.com/openlilylib/tutorials/blob/master/aGervasoni/orchestralScores/example-materials/OLLbase.sty
 \newcommand*{\fancyrefsubseclabelprefix}{subsec}
 
-\frefformat{vario}{\fancyrefsubseclabelprefix}{\%
-subsection\fancyrefdefaultspacing#1#2#3%
-}\%
+\fancyrefaddcaptions{english}{%
+  \providecommand*{\frefsubsecname}{subsection}%
+  \providecommand*{\Frefsubsecname}{Subsection}%
+}
 
-\Frefformat{vario}{\fancyrefsubseclabelprefix}{\%
-Subsection\fancyrefdefaultspacing#1#2#3\%
-}\%
+\frefformat{plain}{\fancyrefsubseclabelprefix}{\frefsubsecname\fancyrefdefaultspacing#1}
+\Frefformat{plain}{\fancyrefsubseclabelprefix}{\Frefsubsecname\fancyrefdefaultspacing#1}
+
+\frefformat{vario}{\fancyrefsubseclabelprefix}{%
+  \frefsubsecname\fancyrefdefaultspacing#1#3%
+}
+\Frefformat{vario}{\fancyrefsubseclabelprefix}{%
+  \Frefsubsecname\fancyrefdefaultspacing#1#3%
+}
 {% endhighlight %}
 
 
