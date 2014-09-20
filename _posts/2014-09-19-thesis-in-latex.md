@@ -147,20 +147,14 @@ One thing that `fancyref` doesn't seem to have support for is referencing subsec
 % Source; https://github.com/openlilylib/tutorials/blob/master/aGervasoni/orchestralScores/example-materials/OLLbase.sty
 \newcommand*{\fancyrefsubseclabelprefix}{subsec}
 
-\fancyrefaddcaptions{english}{%
-  \providecommand*{\frefsubsecname}{subsection}%
-  \providecommand*{\Frefsubsecname}{Subsection}%
-}
+\fancyrefaddcaptions{english}{\providecommand*{\frefsubsecname}{subsection}\providecommand*{\Frefsubsecname}{Subsection}}
 
 \frefformat{plain}{\fancyrefsubseclabelprefix}{\frefsubsecname\fancyrefdefaultspacing#1}
 \Frefformat{plain}{\fancyrefsubseclabelprefix}{\Frefsubsecname\fancyrefdefaultspacing#1}
 
-\frefformat{vario}{\fancyrefsubseclabelprefix}{%
-  \frefsubsecname\fancyrefdefaultspacing#1#3%
-}
-\Frefformat{vario}{\fancyrefsubseclabelprefix}{%
-  \Frefsubsecname\fancyrefdefaultspacing#1#3%
-}
+\frefformat{vario}{\fancyrefsubseclabelprefix}{\frefsubsecname\fancyrefdefaultspacing#1#3}
+
+\Frefformat{vario}{\fancyrefsubseclabelprefix}{\Frefsubsecname\fancyrefdefaultspacing#1#3}
 {% endhighlight %}
 
 
