@@ -1,6 +1,6 @@
 ---
 title: atyndall
-description: "Ash is a Co-Founder of TableSpace, as well as a IT Support Officer, Freelance Software Developer and Systems Administrator. He is completing Computer Science honours at UWA."
+description: "Ash is a web developer, computer science researcher, entrepreneur and volunteer. He lives in Perth, Western Australia."
 ---
 <!doctype html>
 <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
@@ -9,6 +9,16 @@ description: "Ash is a Co-Founder of TableSpace, as well as a IT Support Officer
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 {% include head.html %}
+
+<style>
+#infotext p {
+  text-align: justify;
+}
+
+#infotext a {
+  text-decoration: underline;
+}
+</style>
 </head>
 
 <body id="page" class="frontpage">
@@ -22,32 +32,30 @@ description: "Ash is a Co-Founder of TableSpace, as well as a IT Support Officer
 
         <div class="animated fadeIn" id="infotext">
           <p>
-            Ash is
-            <ul>
-              <li>
-                an <a href='/post/2014/08/13/research-proposal/'>honours researcher</a> at the University of Western Australia,
-              </li>
-              <li>
-                the senior <a href='http://unihall.uwa.edu.au/'>IT Support Advisor</a> at University Hall,
-              </li>
-              <li>
-                an <a href='http://www.uwa.edu.au/people/Ash.Tyndall'>IT Support Officer</a> at the UWA Business School,
-              </li>
-              <li>
-                a <a href='/ashtrac/'>freelance software developer</a>, and
-              </li>
-              <li>
-		a <a href='http://www.ucc.asn.au/infobase/groups/wheel.ucc'>systems administrator</a> at the University Computer Club.
-              </li>
-            </ul>
+            Ash is a web developer, computer science researcher, entrepreneur and tech volunteer. He lives in Perth, Western Australia.
           </p>
           <p>
-            Ash holds a <a href='http://courses.year2011.handbooks.uwa.edu.au/courses/c6/6013'>Bachelor of Computer Science</a> triple-majoring in Systems, Computation and Web Design from UWA.
+            Ash has a broad technical skillset complemented by significant leadership, development and professional experience.
           </p>
+          <p>
+            He is the top computer science honours student of his cohort at the University of Western Australia, graduating with First Class honours in mid-2015. <a href="/honours">Read more about his honours dissertation</a>.
+          <p>
+            He also holds a <a href='http://courses.year2011.handbooks.uwa.edu.au/courses/c6/6013'>Bachelor of Computer Science</a> triple-majoring in Systems, Computation and Web Design, also from UWA.
+          </p>
+          <p>
+            Find out more about Ash, or contact him, using the links below.
+          </p>
+
         </div>
 
   </div>
 </header>
+
+        <div class="footer-wrapper">
+          <footer role="contentinfo">
+            {% include footer.html %}
+          </footer>
+        </div><!-- /.footer-wrapper -->
 
 {% if site.posts.size != 0 %}
 <div id="main" role="main">
@@ -70,12 +78,6 @@ description: "Ash is a Co-Founder of TableSpace, as well as a IT Support Officer
   </article>
 </div><!-- /#main -->
 {% endif %}
-
-<div class="footer-wrapper">
-  <footer role="contentinfo">
-    {% include footer.html %}
-  </footer>
-</div><!-- /.footer-wrapper -->
 
 {% include scripts.html %}          
 
