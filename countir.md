@@ -6,13 +6,6 @@ description: "Information regarding Ash's honours project, CountIR."
 ---
 
 <style>
-.blur {
-	-webkit-filter: blur(1px);
-	-moz-filter: blur(1px);
-	-o-filter: blur(1px);
-	-ms-filter: blur(1px);
-}
-
 figure img {
 	width: 50%;
     margin-left: auto;
