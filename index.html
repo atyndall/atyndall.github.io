@@ -57,28 +57,6 @@ description: "Ash is a web developer, computer science researcher, entrepreneur 
           </footer>
         </div><!-- /.footer-wrapper -->
 
-{% if site.posts.size != 0 %}
-<div id="main" role="main">
-  <article>
-    <div class="entry-wrapper">
-      <header class="entry-header">
-        <h3 class="entry-title">Latest posts</h1>
-      </header>
-      <div class="entry-content">
-        <ul class="post-list">
-        {% for post in site.posts limit:5 %} 
-          <li><article><a href="{{ post.url }}">{{ post.title }} <span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></span></a></article></li>
-        {% endfor %}
-        {% if site.posts.size > 5 %}
-        <li><article><a href="/post/">View all...</a></article></li>
-        {% endif %}
-        </ul>
-      </div><!-- /.entry-content -->
-    </div><!-- /.entry-wrapper -->
-  </article>
-</div><!-- /#main -->
-{% endif %}
-
 {% include scripts.html %}          
 
 </body>
