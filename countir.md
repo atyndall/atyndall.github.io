@@ -1,6 +1,7 @@
 ---
 layout: page
 permalink: /countir/
+header_html: <img src="logo.png" width="250" alt="CountIR" id="countir-logo">
 title: CountIR
 description: "Information regarding Ash's honours project, CountIR."
 ---
