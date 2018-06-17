@@ -1,2 +1,3 @@
+Sitemap: http://ash.id.au/sitemap.xml
 User-agent: *
-Disallow: /resume/
+Disallow: /node_modules/

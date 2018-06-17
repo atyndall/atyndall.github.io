@@ -15,7 +15,7 @@ citation_volume: 16
 citation_issue: 10
 citation_firstpage: 3784
 citation_lastpage: 3791
-citation_pdf_url: https://ash.id.au/publications/JSEN.2016.2530824.pdf
+citation_pdf_url: http://ash.id.au/publications/JSEN.2016.2530824.pdf
 ---
 
 ## Abstract

@@ -7,7 +7,7 @@ citation_title: "Towards a Low-Cost, Non-Invasive System for Occupancy Detection
 citation_author_1: "Tyndall, Ash"
 citation_publication_date: "2015"
 citation_online_date: "2015"
-citation_pdf_url: https://ash.id.au/publications/thesis.pdf
+citation_pdf_url: http://ash.id.au/publications/thesis.pdf
 ---
 
 ## Abstract
