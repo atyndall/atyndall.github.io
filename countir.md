@@ -23,7 +23,7 @@ Australia faces many challenges; aging populations, rising energy prices and env
 
 CountIR was a finalist for the [WAITTA INCITE Awards](http://www.inciteawards.org.au/) Best Student Project of the Year. Ash and CountIR were recognised as one of seven total finalists, and one of only three non-group finalists.
 
-CountIR is the product of Ash's Honours thesis, which was developed in 2015. Ash received first-class honours for CountIR from the University of Western Australia, and the results of his research were published in the prestigious IEEE Sensors Journal. <small>([view on IEEE Xplore](http://dx.doi.org/10.1109/JSEN.2016.2530824), [view public pre-print](paper.pdf))</small>
+CountIR is the product of Ash's Honours thesis, which was developed in 2015. Ash received first-class honours for CountIR from the University of Western Australia, and the results of his research were published in the prestigious IEEE Sensors Journal. <small>([view on IEEE Xplore](http://dx.doi.org/10.1109/JSEN.2016.2530824), [view public pre-print](paper/))</small>
 
 Ash was praised for his research skills and the breadth and depth of his inquiry. An examiner wrote; "There is not a lot to say about Ash Tyndall's project and resulting thesis; they are superb."​ <small>([view full letter](MichaelWiseFeedback.pdf))</small>
 

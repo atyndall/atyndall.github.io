@@ -1,0 +1,52 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+{% include head.html %}
+{% if page.citation_title %}<meta name="citation_title" content="{{page.citation_title}}">{% endif %}
+{% if page.citation_author_1 %}<meta name="citation_author" content="{{page.citation_author_1}}">{% endif %}
+{% if page.citation_author_2 %}<meta name="citation_author" content="{{page.citation_author_2}}">{% endif %}
+{% if page.citation_author_3 %}<meta name="citation_author" content="{{page.citation_author_3}}">{% endif %}
+{% if page.citation_publication_date %}<meta name="citation_publication_date" content="{{page.citation_publication_date}}">{% endif %}
+{% if page.citation_journal_title %}<meta name="citation_journal_title" content="{{page.citation_journal_title}}">{% endif %}
+{% if page.citation_volume %}<meta name="citation_volume" content="{{page.citation_volume}}">{% endif %}
+{% if page.citation_issue %}<meta name="citation_issue" content="{{page.citation_issue}}">{% endif %}
+{% if page.citation_firstpage %}<meta name="citation_firstpage" content="{{page.citation_firstpage}}">{% endif %}
+{% if page.citation_lastpage %}<meta name="citation_lastpage" content="{{page.citation_lastpage}}">{% endif %}
+{% if page.citation_pdf_url %}<meta name="citation_pdf_url" content="{{page.citation_pdf_url}}">{% endif %}
+</head>
+
+<body id="page">
+
+{% include navigation.html %}
+
+<div id="main" role="main">
+  <article class="entry">
+    {% if page.image.feature %}<img src="{{ site.url }}/images/{{ page.image.feature }}" class="entry-feature-image" alt="{{ page.title }}" {% if site.logo == null %}style="margin-top:0;"{% endif %}>{% if page.image.credit %}<p class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a>{% endif %}{% endif %}
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        {% if page.header_html %}
+          {{ page.header_html }}
+        {% else %}
+          <h1 class="entry-title">{% if page.headline %}{{ page.headline }}{% else %}{{ page.title }}</h1>{% endif %}
+        {% endif %}
+      </header>
+      <div class="entry-content">
+        {{ content }}
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    {% include footer.html %}
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+{% include scripts.html %}          
+
+</body>
+</html>
