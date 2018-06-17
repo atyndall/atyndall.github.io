@@ -41,7 +41,7 @@ A more in-depth, but still accessible, explanation of Ash's work can be found in
   <figcaption><a href="presentation.pdf">Seminar Presentation Slides (click to view)</a></figcaption>
 </figure>
 
-Finally, if you want the whole story, you can read his thesis [here](thesis.pdf).
+Finally, if you want the whole story, you can read his thesis [here](/publications/thesis.html).
 
 The thesis is published under a Creative Commons license. A copy of the source code can be found on [Github](https://github.com/atyndall/honours).
 
