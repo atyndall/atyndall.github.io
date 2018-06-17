@@ -2,7 +2,7 @@
 layout: paper
 permalink: /publications/JSEN.2016.2530824.html
 title: "Occupancy estimation using a low-pixel count thermal imager"
-description: "Information regarding Ash's honours project, CountIR."
+description: "An occupancy estimation sensor system based on low-pixel count sensor arrays is proposed."
 citation_title: "Occupancy estimation using a low-pixel count thermal imager"
 citation_author_1: "Tyndall, Ash"
 citation_author_2: "Cardell-Oliver, Rachel"
