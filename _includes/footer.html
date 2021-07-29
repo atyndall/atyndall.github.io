@@ -1,14 +1,13 @@
 <!-- &copy; {{ site.time | date: '%Y' }} {{ site.owner.name }}. Powered by Jekyll using http://mademistakes.com/so-simple/. -->
 <div class="social-icons">
-  <a href="{{ site.url }}/feed.xml" title="Blog XML Feed" target="_blank"><i class="icon-rss icon-2x"></i></a>
   <a href="mailto:hi@ash.id.au" title="Email Ash" target="_blank"><i class="icon-envelope icon-2x"></i></a>
+	{% if site.owner.github %}<a href="http://github.com/{{ site.owner.github }}" title="Ash on Github" target="_blank"><i class="icon-github icon-2x"></i></a>{% endif %}
+	{% if site.owner.linkedin %}<a href="http://linkedin.com/in/{{ site.owner.linkedin }}" title="Ash on LinkedIn" target="_blank"><i class="icon-linkedin icon-2x"></i></a>{% endif %}
 	{% if site.owner.twitter %}<a href="http://twitter.com/{{ site.owner.twitter }}" title="Ash on Twitter" target="_blank"><i class="icon-twitter icon-2x"></i></a>{% endif %}
 	{% if site.owner.facebook %}<a href="http://facebook.com/{{ site.owner.facebook }}" title="Ash on Facebook" target="_blank"><i class="icon-facebook icon-2x"></i></a>{% endif %}
 	{% if site.owner.google_plus %}<a href="{{ site.owner.google_plus }}" title="Ash on Google+" target="_blank"><i class="icon-google-plus icon-2x"></i></a>{% endif %}
-	{% if site.owner.linkedin %}<a href="http://linkedin.com/in/{{ site.owner.linkedin }}" title="Ash on LinkedIn" target="_blank"><i class="icon-linkedin icon-2x"></i></a>{% endif %}
 	{% if site.owner.stackexchange %}<a href="{{ site.owner.stackexchange }}" title="Ash on StackExchange" target="_blank"><i class="icon-stackexchange icon-2x"></i></a>{% endif %}
 	{% if site.owner.instagram %}<a href="http://instagram.com/{{ site.owner.instagram }}" title="Ash on Instagram" target="_blank"><i class="icon-instagram icon-2x"></i></a>{% endif %}
 	{% if site.owner.flickr %}<a href="http://www.flickr.com/photos/{{ site.owner.flickr }}" title="Ash on Flickr" target="_blank"><i class="icon-flickr icon-2x"></i></a>{% endif %}
-	{% if site.owner.github %}<a href="http://github.com/{{ site.owner.github }}" title="Ash on Github" target="_blank"><i class="icon-github icon-2x"></i></a>{% endif %}
 	{% if site.owner.tumblr %}<a href="http://{{ site.owner.tumblr }}.tumblr.com" title="Ash on Tumblr" target="_blank"><i class="icon-tumblr icon-2x"></i></a>{% endif %}
 </div><!-- /.social-icons -->
