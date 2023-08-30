@@ -1,21 +1,86 @@
----
-layout: nil
----
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>{{ site.url }}</loc>
+        <loc>http://ash.id.au</loc>
     </url>
     
-    {% for page in site.pages %}
+    
     <url>
-        <loc>{{ site.url }}{{ page.url }}</loc>
+        <loc>http://ash.id.au/404.html</loc>
     </url>
-    {% endfor %}
+    
+    <url>
+        <loc>http://ash.id.au/publications/JSEN.2016.2530824.html</loc>
+    </url>
+    
+    <url>
+        <loc>http://ash.id.au/countir/</loc>
+    </url>
+    
+    <url>
+        <loc>http://ash.id.au/feed.xml</loc>
+    </url>
+    
+    <url>
+        <loc>http://ash.id.au/</loc>
+    </url>
+    
+    <url>
+        <loc>http://ash.id.au/post/</loc>
+    </url>
+    
+    <url>
+        <loc>http://ash.id.au/publications/</loc>
+    </url>
+    
+    <url>
+        <loc>http://ash.id.au/search.json</loc>
+    </url>
+    
+    <url>
+        <loc>http://ash.id.au/sitemap.xml</loc>
+    </url>
+    
+    <url>
+        <loc>http://ash.id.au/tags/</loc>
+    </url>
+    
+    <url>
+        <loc>http://ash.id.au/publications/thesis.html</loc>
+    </url>
+    
 
-    {% for post in site.posts %}
+    
     <url>
-        <loc>{{ site.url }}{{ post.url }}</loc>
+        <loc>http://ash.id.au/post/2015/01/18/progress-update/</loc>
     </url>
-    {% endfor %}
+    
+    <url>
+        <loc>http://ash.id.au/post/2014/09/19/thesis-in-latex/</loc>
+    </url>
+    
+    <url>
+        <loc>http://ash.id.au/post/2014/09/01/capslock-for-search/</loc>
+    </url>
+    
+    <url>
+        <loc>http://ash.id.au/post/2014/08/27/sensors-and-unforeseen-roadblocks/</loc>
+    </url>
+    
+    <url>
+        <loc>http://ash.id.au/post/2014/08/13/research-proposal/</loc>
+    </url>
+    
+    <url>
+        <loc>http://ash.id.au/post/2014/08/05/shortlisting-hardware/</loc>
+    </url>
+    
+    <url>
+        <loc>http://ash.id.au/post/2014/07/31/the-sensing-trifecta/</loc>
+    </url>
+    
+    <url>
+        <loc>http://ash.id.au/post/2014/07/25/beginnings/</loc>
+    </url>
+    
 </urlset>
