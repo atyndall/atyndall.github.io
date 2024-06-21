@@ -1,13 +1,67 @@
----
----
 [
-	{% for post in site.posts %}
+	
 		{
-		  "title"      : "{{ post.title | escape }}",
-		  "category"   : "{{ post.category }}",
-		  "url"        : "{{ site.url }}{{ post.url }}",
-		  "date"       : "{{ post.date }}",
-		  "shortdate"  : "{{ post.date | date: '%B %d, %Y' }}"
-		} {% if forloop.last %}{% else %},{% endif %}
-	{% endfor %}
+		  "title"      : "January progress update",
+		  "category"   : "articles",
+		  "url"        : "http://ash.id.au/post/2015/01/18/progress-update/",
+		  "date"       : "2015-01-18 00:00:00 +0800",
+		  "shortdate"  : "January 18, 2015"
+		} ,
+	
+		{
+		  "title"      : "Useful tips for writing a thesis in LaTeX",
+		  "category"   : "articles",
+		  "url"        : "http://ash.id.au/post/2014/09/19/thesis-in-latex/",
+		  "date"       : "2014-09-19 00:00:00 +0800",
+		  "shortdate"  : "September 19, 2014"
+		} ,
+	
+		{
+		  "title"      : "Using Caps Lock for Windows 8 search",
+		  "category"   : "articles",
+		  "url"        : "http://ash.id.au/post/2014/09/01/capslock-for-search/",
+		  "date"       : "2014-09-01 00:00:00 +0800",
+		  "shortdate"  : "September 01, 2014"
+		} ,
+	
+		{
+		  "title"      : "Infrared sensors and unforeseen roadblocks",
+		  "category"   : "articles",
+		  "url"        : "http://ash.id.au/post/2014/08/27/sensors-and-unforeseen-roadblocks/",
+		  "date"       : "2014-08-27 00:00:00 +0800",
+		  "shortdate"  : "August 27, 2014"
+		} ,
+	
+		{
+		  "title"      : "Research Proposal",
+		  "category"   : "articles",
+		  "url"        : "http://ash.id.au/post/2014/08/13/research-proposal/",
+		  "date"       : "2014-08-13 00:00:00 +0800",
+		  "shortdate"  : "August 13, 2014"
+		} ,
+	
+		{
+		  "title"      : "Shortlisting Hardware",
+		  "category"   : "articles",
+		  "url"        : "http://ash.id.au/post/2014/08/05/shortlisting-hardware/",
+		  "date"       : "2014-08-05 00:00:00 +0800",
+		  "shortdate"  : "August 05, 2014"
+		} ,
+	
+		{
+		  "title"      : "The Sensing Trifecta",
+		  "category"   : "articles",
+		  "url"        : "http://ash.id.au/post/2014/07/31/the-sensing-trifecta/",
+		  "date"       : "2014-07-31 00:00:00 +0800",
+		  "shortdate"  : "July 31, 2014"
+		} ,
+	
+		{
+		  "title"      : "Beginnings",
+		  "category"   : "articles",
+		  "url"        : "http://ash.id.au/post/2014/07/25/beginnings/",
+		  "date"       : "2014-07-25 00:00:00 +0800",
+		  "shortdate"  : "July 25, 2014"
+		} 
+	
 ]
