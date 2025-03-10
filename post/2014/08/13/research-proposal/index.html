@@ -1,0 +1,379 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Ash Tyndall // Research Proposal</title>
+<meta name="description" content="">
+<meta name="keywords" content="honours">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ash.id.au/images/square200.jpg">
+<meta name="twitter:title" content="Research Proposal">
+<meta name="twitter:description" content="">
+<meta name="twitter:creator" content="@atyndall">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Research Proposal">
+<meta property="og:description" content="">
+<meta property="og:url" content="http://ash.id.au/post/2014/08/13/research-proposal/">
+<meta property="og:site_name" content="Ash Tyndall">
+
+
+
+
+
+<link rel="canonical" href="http://ash.id.au/post/2014/08/13/research-proposal/">
+<link href="http://ash.id.au/feed.xml" type="application/atom+xml" rel="alternate" title="Ash Tyndall Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/assets/css/main.min.css">
+<!-- Webfonts -->
+<script src="//use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+
+</head>
+
+<body id="post">
+
+<header class="masthead">
+	<div class="wrap">
+        
+        <a href="http://ash.id.au" class="site-logo" rel="home" title="Ash Tyndall"><img src="http://ash.id.au/images/square200.jpg" width="200" height="200" alt="Ash Tyndall logo" class="animated fadeInUp"></a>
+        
+	</div>
+</header><!-- /.masthead -->
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <span class="entry-tags"><a href="/tags/#honours" title="Pages tagged honours">honours</a></span>
+        
+          <h1 class="entry-title">Research Proposal</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        <span class="entry-date date published"><time datetime="2014-08-13T00:00:00+08:00"><i class="icon-calendar-empty"></i> August 13, 2014</time></span>
+        
+        <span class="entry-comments"><i class="icon-comment-alt"></i> <a href="#disqus_thread">Comment</a></span>
+        <span><a href="http://ash.id.au/post/2014/08/13/research-proposal/" rel="bookmark" title="Research Proposal"><i class="icon-link"></i> Permalink</a></span>
+        
+      </footer>
+      <div class="entry-content">
+        <p>This week I drafted and submitted my research proposal. Here is a copy converted to markdown. You can find the original in my <a href="http://github.com/atyndall/honours">honours git repo</a>.</p>
+
+<h1 id="non-technical-summary">Non-Technical Summary</h1>
+<p>With the proportion of elderly and mobility-impaired people growing, and the cost of small computing platforms and sensors dropping, now more than ever we can create low-cost sensor systems to use in a “smart home for the disabled.” One such sensor system is an occupancy sensor, which determines the number of people who are present in a given space. This has many applications in a such a smart home, like climate control, which studies have shown can be more efficient when computer controlled in this way.</p>
+
+<p>This project will build on existing research to create an occupancy sensor and accompanying detection software that are well suited for a smart home for the disabled. This system will emphasise four key areas; low cost, non-invasiveness, energy efficiency and reliability. At the end of this project, a list of components and corresponding software will be produced, so that anyone can build the sensor prototype. The prototype will also be put to the test in real world situations around the UWA campus.</p>
+
+<h1 id="background">Background</h1>
+<p>The proportion of elderly and mobility-impaired people is predicted to grow dramatically over the next century, leaving a large proportion of the population unable to care for themselves, and consequently less people able care for these groups. <a href="#chan2009smart">[1]</a> With this issue looming, investments are being made into a variety of technologies that can provide the support these groups need to live independent of human assistance.</p>
+
+<p>With recent advancements in low cost embedded computing, such as the <a href="http://arduino.cc/en/Guide/Introduction">Arduino</a> and <a href="http://www.raspberrypi.org/">Raspberry Pi</a>, the ability to provide a set of interconnected sensors, actuators and interfaces to enable a low-cost “smart home for the disabled” is becoming increasingly achievable.</p>
+
+<p>Sensing techniques to determine occupancy, the detection of the presence and number of people in an area, are of particular use to the elderly and disabled. Detection can be used to inform various devices that change state depending on the user’s location, including the better regulation energy hungry devices to help reduce financial burden. Household climate control, which in some regions of Australia accounts for up to 40% of energy usage <a href="#abs4602">[2]</a> is one particular area in which occupancy detection can reduce costs, as efficiency can be increased dramatically with annual energy savings of up to 25% found in some cases. <a href="#erickson2013thermosense">[3]</a></p>
+
+<p>Significant research has been performed into the occupancy field, with a focus on improving the energy efficiency of both office buildings and households. This is achieved through a variety of sensing means, including thermal arrays, <a href="#beltran2013thermosense">[4]</a> ultrasonic sensors, <a href="#hnat2012doorjamb">[5]</a> smart phone tracking, <a href="#kleiminger2013using">[6]</a><a href="#balaji2013sentinel">[7]</a> electricity consumption, <a href="#kleiminger2013occupancy">[8]</a> network traffic analysis, <a href="#ting2013occupancy">[9]</a> sound, <a href="#hailemariam2011real">[10]</a> CO2, <a href="#hailemariam2011real">[10]</a> passive infrared, <a href="#hailemariam2011real">[10]</a> video cameras, <a href="#erickson2013poem">[11]</a> and various fusions of the above. <a href="#yang2012multi">[12]</a><a href="#ting2013occupancy">[9]</a></p>
+
+<h1 id="aim">Aim</h1>
+<p>While many of the above solutions achieve excellent accuracies, in many cases they suffer from problems of installation logistics, difficult assembly, assumptions on user’s technology ownership and component cost. In a smart home for the disabled, accuracy is important, but accessibility is paramount.</p>
+
+<p>The goal of this research project is to devise an occupancy detection system that forms part of a larger `smart home for the disabled’ that meets the following accessibility criteria;</p>
+
+<ul>
+  <li>
+    <p><strong>Low Cost</strong>: The set of components required should aim to minimise cost, as these devices are intended to be deployed in situations where the serviced user may be financially restricted.</p>
+  </li>
+  <li>
+    <p><strong>Non-Invasive</strong>: The sensors used in the system should gather as little information as necessary to achieve the detection goal; there are privacy concerns with the use of high-definition sensors.</p>
+  </li>
+  <li>
+    <p><strong>Energy Efficient</strong>: The system may be placed in a location where there is no access to mains power (i.e. roof), and the retrofitting of appropriate power can be difficult; the ability to survive for long periods on only battery power is advantageous.</p>
+  </li>
+  <li>
+    <p><strong>Reliable</strong>: The system should be able to operate without user intervention or frequent maintenance, and should be able to perform its occupancy detection goal with a high degree of accuracy.</p>
+  </li>
+</ul>
+
+<p>Success in this project would involve both</p>
+
+<ol>
+  <li>Devising a bill of materials that can be purchased off-the-shelf, assembled without difficulty, on which a software platform can be installed that performs analysis of the sensor data and provides a simple answer to the occupancy question, and</li>
+  <li>Using those materials and softwares to create a final demonstration prototype whose success can be tested in controlled and real-world conditions.</li>
+</ol>
+
+<p>This system would be extensible, based on open standards such as REST or CoAP, <a href="#guinard2012search">[13]</a><a href="#kovatsch2013coap">[14]</a> and could easily fit into a larger `smart home for the disabled’ or internet-of-things system.</p>
+
+<h1 id="method">Method</h1>
+<p>Achieving these aims involves performing research and development in several discrete phases.</p>
+
+<h3 id="hardware">Hardware</h3>
+<p>A list of possible sensor candidates will be developed, and these candidates will be ranked according to their adherence to the four accessibility criteria outlined above. Primarily the sensor ranking will consider the cost, invasiveness and reliability of detection, as the sensors themselves do not form a large part of the power requirement.</p>
+
+<p>Similarly, a list of possible embedded boards to act as the sensor’s host and data analysis platform will be created. Primarily, they will be ranked on cost, energy efficiency and reliability of programming/system stability.</p>
+
+<p>Low-powered wireless protocols will also be investigated, to determine which is most suitable for the device; providing enough range at low power consumption to allow easy and reliable communication with the hardware.</p>
+
+<p>Once promising candidates have been identified, components will be purchased and analysed to determine how well they can integrate.</p>
+
+<h3 id="classification">Classification</h3>
+<p>Depending on the final sensor choice, relevant experiments will be performed to determine the classification algorithm with the best occupancy determination accuracy. This will involve the deployment of a prototype to perform data gathering, as well as another device/person to assess ground truth.</p>
+
+<h3 id="robustness--api">Robustness / API</h3>
+<p>Once the classification algorithm and hardware are finalised, an easy to use API will be developed to allow the data the device collects to be integrated into a broader system.</p>
+
+<p>The finalised product will be architected into a easy-to-install software solution that will allow someone without domain knowledge to use the software and corresponding hardware in their own environment.</p>
+
+<h1 id="timeline">Timeline</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Date</th>
+      <th style="text-align: left">Task</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Fri 15 August</td>
+      <td style="text-align: left"><em>Project proposal and project summary due to Coordinator</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">August</td>
+      <td style="text-align: left">Hardware shortlisting / testing</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">25–29 August</td>
+      <td style="text-align: left"><em>Project proposal talk presented to research group</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">September</td>
+      <td style="text-align: left">Literature review</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Fri 19 September</td>
+      <td style="text-align: left"><em>Draft literature review due to supervisor(s)</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">October - November</td>
+      <td style="text-align: left">Core Hardware / Software development</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Fri 24 October</td>
+      <td style="text-align: left"><em>Literature Review and Revised Project Proposal due to Coordinator</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">November - February</td>
+      <td style="text-align: left"><em>End of year break</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">February</td>
+      <td style="text-align: left">Write dissertation</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Thu 16 April</td>
+      <td style="text-align: left"><em>Draft dissertation due to supervisor</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">April - May</td>
+      <td style="text-align: left">Improve robustness and API</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Thu 30 April</td>
+      <td style="text-align: left"><em>Draft dissertation available for collection from supervisor</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Fri 8 May</td>
+      <td style="text-align: left"><em>Seminar title and abstract due to Coordinator</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Mon 25 May</td>
+      <td style="text-align: left"><em>Final dissertation due to Coordinator</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">25–29 May</td>
+      <td style="text-align: left"><em>Seminar Presented to Seminar Marking Panel</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Thu 28 May</td>
+      <td style="text-align: left"><em>Poster Due</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Mon 22 June</td>
+      <td style="text-align: left"><em>Corrected Dissertation Due to Coordinator</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="software-and-hardware-requirements">Software and Hardware Requirements</h1>
+<p>A large part of this research project is determining the specific hardware and software that best fit the accessibility criteria. Because of this, an exhaustive list of software and hardware requirements are not given in this proposal.</p>
+
+<p>A budget of up to $300 has been allocated by my supervisor for project purchases. Some technologies with promise that will be investigated include;</p>
+
+<ul>
+  <li>
+    <p><strong>Raspberry Pi Model B+</strong> Small form-factor Linux computer: Available from <a href="http://arduino.cc/en/Guide/Introduction">here</a>; $38</p>
+  </li>
+  <li>
+    <p><strong>Arduino Uno</strong> Small form-factor microcontroller: Available from <a href="http://arduino.cc/en/Main/arduinoBoardUno">here</a>; $36</p>
+  </li>
+  <li>
+    <p><strong>Panasonic Grid-EYE</strong> Infrared Array Sensor: Available from <a href="http://www3.panasonic.biz/ac/e/control/sensor/infrared/grid-eye/index.jsp">here</a>; approx. $33</p>
+  </li>
+  <li>
+    <p><strong>Passive Infrared Sensor</strong> Available from various places; $10-$20</p>
+  </li>
+</ul>
+
+<h1 id="references">References</h1>
+<ol class="bibliography"><li><span id="chan2009smart">M. Chan, E. Campo, D. Estève, and J.-Y. Fourniols, “Smart homes—current features and future perspectives,” <i>Maturitas</i>, vol. 64, no. 2, pp. 90–97, 2009.</span></li>
+<li><span id="abs4602">Australian Bureau of Statistics, “4602.2 - Household Water and Energy Use, Victoria: Heating and cooling,” Oct. 2011.</span></li>
+<li><span id="erickson2013thermosense">V. L. Erickson, A. Beltran, D. A. Winkler, N. P. Esfahani, J. R. Lusby, and A. E. Cerpa, “ThermoSense: thermal array sensor networks in building management,” in <i>Proceedings of the 11th ACM Conference on Embedded Networked Sensor Systems</i>, 2013, p. 87.</span></li>
+<li><span id="beltran2013thermosense">A. Beltran, V. L. Erickson, and A. E. Cerpa, “ThermoSense: Occupancy Thermal Based Sensing for HVAC Control,” in <i>Proceedings of the 5th ACM Workshop on Embedded Systems For Energy-Efficient Buildings</i>, 2013, pp. 1–8.</span></li>
+<li><span id="hnat2012doorjamb">T. W. Hnat, E. Griffiths, R. Dawson, and K. Whitehouse, “Doorjamb: unobtrusive room-level tracking of people in homes using doorway sensors,” in <i>Proceedings of the 10th ACM Conference on Embedded Network Sensor Systems</i>, 2012, pp. 309–322.</span></li>
+<li><span id="kleiminger2013using">W. Kleiminger, C. Beckel, A. Dey, and S. Santini, “Using unlabeled Wi-Fi scan data to discover occupancy patterns of private households,” in <i>Proceedings of the 11th ACM Conference on Embedded Networked Sensor Systems</i>, 2013, p. 47.</span></li>
+<li><span id="balaji2013sentinel">B. Balaji, J. Xu, A. Nwokafor, R. Gupta, and Y. Agarwal, “Sentinel: occupancy based HVAC actuation using existing WiFi infrastructure within commercial buildings,” in <i>Proceedings of the 11th ACM Conference on Embedded Networked Sensor Systems</i>, 2013, p. 17.</span></li>
+<li><span id="kleiminger2013occupancy">W. Kleiminger, C. Beckel, T. Staake, and S. Santini, “Occupancy detection from electricity consumption data,” in <i>Proceedings of the 5th ACM Workshop on Embedded Systems For Energy-Efficient Buildings</i>, 2013, pp. 1–8.</span></li>
+<li><span id="ting2013occupancy">K. Ting, R. Yu, and M. Srivastava, “Occupancy inferencing from non-intrusive data sources,” in <i>Proceedings of the 5th ACM Workshop on Embedded Systems For Energy-Efficient Buildings</i>, 2013, pp. 1–2.</span></li>
+<li><span id="hailemariam2011real">E. Hailemariam, R. Goldstein, R. Attar, and A. Khan, “Real-time occupancy detection using decision trees with multiple sensor types,” in <i>Proceedings of the 2011 Symposium on Simulation for Architecture and Urban Design</i>, 2011, pp. 141–148.</span></li>
+<li><span id="erickson2013poem">V. L. Erickson, S. Achleitner, and A. E. Cerpa, “POEM: Power-efficient occupancy-based energy management system,” in <i>Proceedings of the 12th international conference on Information processing in sensor networks</i>, 2013, pp. 203–216.</span></li>
+<li><span id="yang2012multi">Z. Yang, N. Li, B. Becerik-Gerber, and M. Orosz, “A multi-sensor based occupancy estimation model for supporting demand driven HVAC operations,” in <i>Proceedings of the 2012 Symposium on Simulation for Architecture and Urban Design</i>, 2012, p. 2.</span></li>
+<li><span id="guinard2012search">D. Guinard, I. Ion, and S. Mayer, “In search of an internet of things service architecture: REST or WS-*? A developers’ perspective,” in <i>Mobile and Ubiquitous Systems: Computing, Networking, and Services</i>, Springer, 2012, pp. 326–337.</span></li>
+<li><span id="kovatsch2013coap">M. Kovatsch, “CoAP for the web of things: from tiny resource-constrained devices to the web browser,” in <i>Proceedings of the 2013 ACM conference on Pervasive and ubiquitous computing adjunct publication</i>, 2013, pp. 1495–1504.</span></li></ol>
+
+        <hr />
+        <p style="font-size:smaller;"><em>Noticed a problem with this post? Leave a comment or <a href="https://github.com/atyndall/atyndall.github.io/blob/source/_posts/2014-08-13-research-proposal.md">submit a pull request</a>.</em></p>
+        <div id="disqus_thread"></div><!-- /#disqus_thread -->
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://ash.id.au/post/2014/08/05/shortlisting-hardware/" class="btn" title="Shortlisting Hardware">Previous article</a>
+      
+      
+        <a href="http://ash.id.au/post/2014/08/27/sensors-and-unforeseen-roadblocks/" class="btn" title="Infrared sensors and unforeseen roadblocks">Next article</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <!-- &copy; 2025 Ash Tyndall. Powered by Jekyll using http://mademistakes.com/so-simple/. -->
+<div class="social-icons">
+  <a href="mailto:hi@ash.id.au" title="Email Ash" target="_blank"><i class="icon-envelope icon-2x"></i></a>
+	<a href="http://github.com/atyndall" title="Ash on Github" target="_blank"><i class="icon-github icon-2x"></i></a>
+	<a href="http://linkedin.com/in/ashtyndall/" title="Ash on LinkedIn" target="_blank"><i class="icon-linkedin icon-2x"></i></a>
+	<a href="http://twitter.com/atyndall" title="Ash on Twitter" target="_blank"><i class="icon-twitter icon-2x"></i></a>
+	
+	
+	
+	
+	
+	
+	
+</div><!-- /.social-icons -->
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://ash.id.au/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://ash.id.au/assets/js/scripts.min.js"></script>
+
+<!-- Jekyll Simple Search option -->
+<script>
+  $(document).ready(function() {
+      $('.search-field').simpleJekyllSearch({
+          jsonFile : 'http://ash.id.au/search.json',
+          searchResults : '.search-results',
+          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          noResults: '<p>Nothing found.</p>'
+        });
+  });
+
+  (function( $, window, undefined ) {
+    
+     var bs = {
+          close: $(".icon-remove-sign"),
+          searchform: $(".search-form"),
+          canvas: $("body"),
+          dothis: $('.dosearch')
+      };
+    
+    bs.dothis.on('click', function() {
+      $('.search-wrapper').css({ display: "block" });
+      bs.searchform.toggleClass('active');
+      bs.searchform.find('input').focus();
+      bs.canvas.toggleClass('search-overlay');
+    });
+    
+      bs.close.on('click', function() {
+        $('.search-wrapper').removeAttr( 'style' );
+        bs.searchform.toggleClass('active');
+        bs.canvas.removeClass('search-overlay');
+    });
+  })( jQuery, window );
+</script>
+
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNW0R3VBD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZGNW0R3VBD');
+</script>
+<!-- End Google Analytics -->
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'atyndall'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>	        
+
+</body>
+</html>

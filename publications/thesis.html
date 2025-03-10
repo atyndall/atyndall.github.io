@@ -1,0 +1,212 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Ash Tyndall // Towards a Low-Cost, Non-Invasive System for Occupancy Detection using a Thermal Detector Array</title>
+<meta name="description" content="With the increasing inter-networked and inexpensive nature of embedded sensors and systems, occupancy sensing, the detection of the presence and number of people in a given space, is becoming a cost-effective area of research.">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ash.id.au/images/square200.jpg">
+<meta name="twitter:title" content="Towards a Low-Cost, Non-Invasive System for Occupancy Detection using a Thermal Detector Array">
+<meta name="twitter:description" content="With the increasing inter-networked and inexpensive nature of embedded sensors and systems, occupancy sensing, the detection of the presence and number of people in a given space, is becoming a cost-effective area of research.">
+<meta name="twitter:creator" content="@atyndall">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Towards a Low-Cost, Non-Invasive System for Occupancy Detection using a Thermal Detector Array">
+<meta property="og:description" content="With the increasing inter-networked and inexpensive nature of embedded sensors and systems, occupancy sensing, the detection of the presence and number of people in a given space, is becoming a cost-effective area of research.">
+<meta property="og:url" content="http://ash.id.au/publications/thesis.html">
+<meta property="og:site_name" content="Ash Tyndall">
+
+
+
+
+
+<link rel="canonical" href="http://ash.id.au/publications/thesis.html">
+<link href="http://ash.id.au/feed.xml" type="application/atom+xml" rel="alternate" title="Ash Tyndall Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/assets/css/main.min.css">
+<!-- Webfonts -->
+<script src="//use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+
+<meta name="citation_title" content="Towards a Low-Cost, Non-Invasive System for Occupancy Detection using a Thermal Detector Array">
+<meta name="citation_author" content="Tyndall, Ash">
+
+
+<meta name="citation_online_date" content="2015">
+<meta name="citation_publication_date" content="2015">
+
+
+
+
+
+
+<meta name="citation_pdf_url" content="http://ash.id.au/publications/thesis.pdf">
+</head>
+
+<body id="page">
+
+<header class="masthead">
+	<div class="wrap">
+        
+        <a href="http://ash.id.au" class="site-logo" rel="home" title="Ash Tyndall"><img src="http://ash.id.au/images/square200.jpg" width="200" height="200" alt="Ash Tyndall logo" class="animated fadeInUp"></a>
+        
+	</div>
+</header><!-- /.masthead -->
+
+
+<div id="main" role="main">
+  <article class="entry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        
+          <h1 class="entry-title">Towards a Low-Cost, Non-Invasive System for Occupancy Detection using a Thermal Detector Array</h1>
+        
+      </header>
+      <div class="entry-content">
+        <h2 id="abstract">Abstract</h2>
+<p>With the increasing inter-networked and inexpensive nature of embedded sensors
+and systems, occupancy sensing, the detection of the presence and number of
+people in a given space, is becoming a cost-effective area of research. Knowing
+the number of occupants in a space can help reduce energy consumption and
+greenhouse gas emissions in both small homes and in large office buildings through
+more efficient climate control. The goal of this project was to develop an occupant
+sensing system that is low-cost, non-invasive, reliable and energy efficient.</p>
+
+<p>After examining the available sensing options, we concluded that a lowresolution
+Thermal Detector Array (lrTDA) would be the most appropriate sensor
+for our project, as it has non-invasiveness advantages. The key paper in
+this area developed the “ThermoSense” system using an lrTDA in combination
+with image subtraction, feature extraction and machine learning classification
+algorithms. They made occupancy predictions with a Root-Mean-Square Error
+(RMSE) of only 0.35 occupants, at an estimated cost of 170 AUD. However, due
+to component availability issues, ThermoSense could not be directly replicated
+in the Australian market.</p>
+
+<p>We designed our own sensing system for 185 AUD using an Arduino, a Raspberry
+Pi, and a different lrTDA (the MLX90620), which had a narrower, rectangular
+field of view. The system consumes ∼256 mW when active. We also developed
+the Thermal Array Library (TArL), a software library that implemented ThermoSense’s
+occupant detection algorithm. We then investigated ThermoSense’s
+classification methods, which used numeric Multi-Layer Perceptron, k-Nearest
+Neighbors and Linear Regression algorithms and found our results differed from
+theirs significantly in both RMSE and correlation, with both being lower. These
+results suggest that classifiers used are sensitive to the specific sensor’s properties.</p>
+
+<p>After further experimentation with our own suite of nominal classification
+algorithms, we found an approach (K*) that achieved an RMSE of 0.304 and
+a precision of 82%, which improves upon ThermoSense’s results. We reflected
+upon our four criteria, and with our choice of sensor, falling component costs,
+our accuracy results and power consumption statistics, we concluded that our
+sensing system prototype met our defined criteria.</p>
+
+<h2 id="details">Details</h2>
+<p><strong>Authors:</strong> Tyndall, Ash</p>
+
+<p><a href="thesis.pdf">Download PDF</a></p>
+
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <!-- &copy; 2025 Ash Tyndall. Powered by Jekyll using http://mademistakes.com/so-simple/. -->
+<div class="social-icons">
+  <a href="mailto:hi@ash.id.au" title="Email Ash" target="_blank"><i class="icon-envelope icon-2x"></i></a>
+	<a href="http://github.com/atyndall" title="Ash on Github" target="_blank"><i class="icon-github icon-2x"></i></a>
+	<a href="http://linkedin.com/in/ashtyndall/" title="Ash on LinkedIn" target="_blank"><i class="icon-linkedin icon-2x"></i></a>
+	<a href="http://twitter.com/atyndall" title="Ash on Twitter" target="_blank"><i class="icon-twitter icon-2x"></i></a>
+	
+	
+	
+	
+	
+	
+	
+</div><!-- /.social-icons -->
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://ash.id.au/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://ash.id.au/assets/js/scripts.min.js"></script>
+
+<!-- Jekyll Simple Search option -->
+<script>
+  $(document).ready(function() {
+      $('.search-field').simpleJekyllSearch({
+          jsonFile : 'http://ash.id.au/search.json',
+          searchResults : '.search-results',
+          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          noResults: '<p>Nothing found.</p>'
+        });
+  });
+
+  (function( $, window, undefined ) {
+    
+     var bs = {
+          close: $(".icon-remove-sign"),
+          searchform: $(".search-form"),
+          canvas: $("body"),
+          dothis: $('.dosearch')
+      };
+    
+    bs.dothis.on('click', function() {
+      $('.search-wrapper').css({ display: "block" });
+      bs.searchform.toggleClass('active');
+      bs.searchform.find('input').focus();
+      bs.canvas.toggleClass('search-overlay');
+    });
+    
+      bs.close.on('click', function() {
+        $('.search-wrapper').removeAttr( 'style' );
+        bs.searchform.toggleClass('active');
+        bs.canvas.removeClass('search-overlay');
+    });
+  })( jQuery, window );
+</script>
+
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNW0R3VBD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZGNW0R3VBD');
+</script>
+<!-- End Google Analytics -->
+
+          
+
+</body>
+</html>

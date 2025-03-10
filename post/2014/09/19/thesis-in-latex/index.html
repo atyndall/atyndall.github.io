@@ -1,0 +1,339 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Ash Tyndall // Useful tips for writing a thesis in LaTeX</title>
+<meta name="description" content="">
+<meta name="keywords" content="honours">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ash.id.au/images/square200.jpg">
+<meta name="twitter:title" content="Useful tips for writing a thesis in LaTeX">
+<meta name="twitter:description" content="">
+<meta name="twitter:creator" content="@atyndall">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Useful tips for writing a thesis in LaTeX">
+<meta property="og:description" content="">
+<meta property="og:url" content="http://ash.id.au/post/2014/09/19/thesis-in-latex/">
+<meta property="og:site_name" content="Ash Tyndall">
+
+
+
+
+
+<link rel="canonical" href="http://ash.id.au/post/2014/09/19/thesis-in-latex/">
+<link href="http://ash.id.au/feed.xml" type="application/atom+xml" rel="alternate" title="Ash Tyndall Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/assets/css/main.min.css">
+<!-- Webfonts -->
+<script src="//use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+
+</head>
+
+<body id="post">
+
+<header class="masthead">
+	<div class="wrap">
+        
+        <a href="http://ash.id.au" class="site-logo" rel="home" title="Ash Tyndall"><img src="http://ash.id.au/images/square200.jpg" width="200" height="200" alt="Ash Tyndall logo" class="animated fadeInUp"></a>
+        
+	</div>
+</header><!-- /.masthead -->
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <span class="entry-tags"><a href="/tags/#honours" title="Pages tagged honours">honours</a></span>
+        
+          <h1 class="entry-title">Useful tips for writing a thesis in LaTeX</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        <span class="entry-date date published"><time datetime="2014-09-19T00:00:00+08:00"><i class="icon-calendar-empty"></i> September 19, 2014</time></span>
+        
+        <span class="entry-comments"><i class="icon-comment-alt"></i> <a href="#disqus_thread">Comment</a></span>
+        <span><a href="http://ash.id.au/post/2014/09/19/thesis-in-latex/" rel="bookmark" title="Useful tips for writing a thesis in LaTeX"><i class="icon-link"></i> Permalink</a></span>
+        
+      </footer>
+      <div class="entry-content">
+        <p>These recent weeks I have been working on the <a href="https://github.com/atyndall/honours/tree/master/litreview">literature review</a> section of my thesis, and while doing that I’ve been trying to use LaTeX packages to make that experience as easy as possible. I’ll outline some of the things I’ve done here.</p>
+
+<h2 id="use-subfiles-for-a-modular-thesis">Use <code>subfiles</code> for a modular thesis</h2>
+<p>The first thing I realised was that my thesis is going to very quickly get unwieldy if it is all contained in one document. I did some research, and I found that the <a href="http://www.ctan.org/tex-archive/macros/latex/contrib/subfiles"><code>subfiles</code></a> package was well suited to my situation.</p>
+
+<p><code>subfiles</code> allows you to have separate LaTeX files for different chapters, while allowing you to still compile both the chapters separately, and the whole document. This is great, as while I’m working on the literature review section, for instance, I don’t want to waste my time compiling my whole thesis document when all I care about is one section.</p>
+
+<p>This is the directory structure of my thesis;</p>
+
+<pre><code>honours/
+├── cshonours.cls
+├── discussion
+│   └── discussion.tex
+├── introduction
+│   └── introduction.tex
+├── litreview
+│   └── litreview.tex
+├── methods
+│   └── methods.tex
+├── proposal
+│   └── proposal.tex
+├── references
+│   └── primary.bib
+├── results
+│   └── results.tex
+└── thesis
+    └── thesis.tex
+</code></pre>
+
+<p>Using subfiles is pretty easy; what it does is copies the header of your “main document” to your subdocuments. I have my main document, <code>thesis/thesis.tex</code>, which looks similar to this;</p>
+
+<figure class="highlight"><pre><code class="language-latex" data-lang="latex"><span></span><span class="k">\documentclass</span><span class="nb">{</span>../cshonours<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>subfiles<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>etoolbox<span class="nb">}</span>
+
+<span class="c">% Configure bibliography</span>
+<span class="k">\bibliographystyle</span><span class="nb">{</span>acm<span class="nb">}</span>
+<span class="k">\defaultbibliography</span><span class="nb">{</span>../references/primary<span class="nb">}</span>
+<span class="k">\defaultbibliographystyle</span><span class="nb">{</span>acm<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\mainfile</span><span class="nb">}{}</span> <span class="c">% we use the existence of this command to see if we&#39;re compiling the whole thesis or just a chapter</span>
+
+<span class="k">\subfile</span><span class="nb">{</span>../introduction/introduction<span class="nb">}</span>
+<span class="k">\subfile</span><span class="nb">{</span>../litreview/litreview<span class="nb">}</span>
+<span class="k">\subfile</span><span class="nb">{</span>../methods/methods<span class="nb">}</span>
+<span class="k">\subfile</span><span class="nb">{</span>../results/results<span class="nb">}</span>
+<span class="k">\subfile</span><span class="nb">{</span>../discussion/discussion<span class="nb">}</span>
+
+<span class="k">\bibliography</span><span class="nb">{</span>../references/primary<span class="nb">}</span>
+
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span></code></pre></figure>
+
+<p>and a bunch of subfiles like my literature review chapter, <code>litreview/litreview.tex</code>, which look like this;</p>
+
+<figure class="highlight"><pre><code class="language-latex" data-lang="latex"><span></span><span class="k">\documentclass</span><span class="na">[../thesis/thesis.tex]</span><span class="nb">{</span>subfiles<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+ <span class="k">\chapter</span><span class="nb">{</span>Literature Review<span class="nb">}</span>
+ <span class="k">\label</span><span class="nb">{</span>chap:litreview<span class="nb">}</span>
+ 
+ <span class="c">% Content goes here</span>
+ 
+ <span class="k">\ifcsdef</span><span class="nb">{</span>mainfile<span class="nb">}{}{</span><span class="k">\bibliography</span><span class="nb">{</span>../references/primary<span class="nb">}}</span>
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span></code></pre></figure>
+
+<p>Both documents can be successfully compiled without problems.</p>
+
+<h3 id="conditional-actions-with-subfiles">Conditional actions with <code>subfiles</code></h3>
+
+<p>One improvement I’ve made over the default subfiles configuration is the use of <code>\newcommand{\mainfile}{}</code>. This defines a pointless command called <code>\mainfile</code> if you are compiling <code>thesis.tex</code> directly. However, because it is in the body of <code>thesis.tex</code>, not the header, this command will not be defined if you are compiling an individual chapter.</p>
+
+<p>This means we can use the <code>\ifcsdef</code> function (provided by <code>etoolbox</code>) to check if <code>\mainfile</code> is defined, and make things print or not print depending on if the document is being compiled as the whole, or just a part.</p>
+
+<figure class="highlight"><pre><code class="language-latex" data-lang="latex"><span></span><span class="k">\ifcsdef</span><span class="nb">{</span>mainfile<span class="nb">}{}{</span><span class="k">\bibliography</span><span class="nb">{</span>../references/primary<span class="nb">}}</span></code></pre></figure>
+
+<p>The above line prints a copy of the bibliography after the chapter, provided we’re just compiling the chapter on its own. This is useful, as if I’m working on an individual chapter, I still want to see the bibliography for that specific chapter, but if I’m compiling the whole document, I don’t want to see the bibliography after each chapter.</p>
+
+<h3 id="using-the-same-style-file-for-each-subfile">Using the same style file for each subfile</h3>
+
+<p>One problem that you run into with <code>subfiles</code> is that if you have a custom document class file like I do (<code>cshonours.cls</code>), you can’t write <code>\documentclass{cshonours}</code> in your main document, or other subfiles will look for the <code>cshonours.cls</code> file in their own directories, not in the main document’s directory. If LaTeX cannot find the style file there, the compile will fail.</p>
+
+<p>One way to solve this problem is to have a copy of your <code>.cls</code> file in each subfiles’ directory, but another trickier way to solve it is to also put your main document (in my case <code>thesis/thesis.tex</code>) in its own subdirectory, and use a relative path that is correct for all subfiles AND the main file; <code>\documentclass{..\cshonours}</code>. You’ll get a warning message from LaTeX, but it will compile just fine.</p>
+
+<h2 id="acronyms-and-abbreviations">Acronyms and abbreviations</h2>
+
+<p>If you’re like me and doing a thesis in an area with a lot of tech, chances are you’re going to be using a lot of acronyms and abbreviations to describe things. I’ve found both the <a href="http://www.ctan.org/tex-archive/macros/latex/contrib/acronym"><code>acronyms</code></a> and <a href="http://www.ctan.org/tex-archive/macros/latex/contrib/frankenstein"><code>abbrevs</code></a> packages useful for this.</p>
+
+<p>Here is part of my <code>thesis/thesis.tex</code> header;</p>
+
+<figure class="highlight"><pre><code class="language-latex" data-lang="latex"><span></span><span class="k">\usepackage</span><span class="nb">{</span>abbrevs<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>acronym<span class="nb">}</span>
+
+<span class="c">% Acronyms for common stuff</span>
+<span class="k">\acrodef</span><span class="nb">{</span>lowpan<span class="nb">}</span>[6LoWPAN]<span class="nb">{</span>IPv6 over Low power Wireless Personal Area Networks<span class="nb">}</span>
+<span class="k">\acrodef</span><span class="nb">{</span>coap<span class="nb">}</span>[CoAP]<span class="nb">{</span>Constrained Application Protocol<span class="nb">}</span>
+<span class="k">\acrodef</span><span class="nb">{</span>iot<span class="nb">}</span>[IoT]<span class="nb">{</span>Internet of Things<span class="nb">}</span>
+
+<span class="c">% Abbreviation commands for common stuff</span>
+<span class="k">\newabbrev\lphy</span><span class="nb">{</span>802.15.4-2006<span class="nb">}</span>
+<span class="k">\newabbrev\lowpan</span><span class="nb">{</span><span class="k">\ac</span><span class="nb">{</span>lowpan<span class="nb">}}</span>
+<span class="k">\newabbrev\coap</span><span class="nb">{</span><span class="k">\ac</span><span class="nb">{</span>coap<span class="nb">}}</span>
+<span class="k">\newabbrev\iot</span><span class="nb">{</span><span class="k">\ac</span><span class="nb">{</span>iot<span class="nb">}}</span></code></pre></figure>
+
+<p>What the <code>\acrodef</code> does is defines an acronym, which you can then reference with <code>\ac{acroname}</code>. If you use that, the first time you use it, it will define the whole acronym, and subsequent times, it will just use the acronym. For example;</p>
+
+<figure class="highlight"><pre><code class="language-latex" data-lang="latex"><span></span>We can see that <span class="k">\ac</span><span class="nb">{</span>lowpan<span class="nb">}</span> is a good system by which to etc, etc.
+<span class="k">\ac</span><span class="nb">{</span>lowpan<span class="nb">}</span> is also good for x, y, z.</code></pre></figure>
+
+<p>will produce</p>
+
+<blockquote>
+  <p>We can see that IPv6 over Low power Wireless Personal Area Networks (6LoWPAN) is a good system by which to etc, etc.<br />
+6LoWPAN is also good for x, y, z.</p>
+</blockquote>
+
+<p>The abbreviations package is similar, in that it lets you define more simple abbreviations to map to LaTeX commands, or just text. This is different to using <code>\newcommand</code>, as it handles spacing a lot better. I use it to define some IEEE standards that I mention a lot, as well as even shorter versions of the acronym commands. This allows me to use this, instead of the above;</p>
+
+<figure class="highlight"><pre><code class="language-latex" data-lang="latex"><span></span>We can see that <span class="k">\lowpan</span> is a good system by which to etc, etc.
+<span class="k">\lowpan</span> is also good for x, y, z.</code></pre></figure>
+
+<p>which I find very convenient.</p>
+
+<h2 id="fancyref-support-for-subsections"><code>fancyref</code> support for subsections</h2>
+
+<p>I also use the <a href="http://www.ctan.org/tex-archive/macros/latex/contrib/fancyref"><code>fancyref</code></a> package for cross-referencing. <code>fancyref</code> provides a much smarter cross-referencing system that automatically describes the type of thing you’re referencing, and the page it is on.</p>
+
+<p>One thing that <code>fancyref</code> doesn’t seem to have support for is referencing subsections. If you add these commands to your document header, it should be able to reference them;</p>
+
+<figure class="highlight"><pre><code class="language-latex" data-lang="latex"><span></span><span class="c">% Source; https://github.com/openlilylib/tutorials/blob/master/aGervasoni/orchestralScores/example-materials/OLLbase.sty</span>
+<span class="k">\newcommand*</span><span class="nb">{</span><span class="k">\fancyrefsubseclabelprefix</span><span class="nb">}{</span>subsec<span class="nb">}</span>
+
+<span class="k">\fancyrefaddcaptions</span><span class="nb">{</span>english<span class="nb">}{</span><span class="k">\providecommand*</span><span class="nb">{</span><span class="k">\frefsubsecname</span><span class="nb">}{</span>subsection<span class="nb">}</span><span class="k">\providecommand*</span><span class="nb">{</span><span class="k">\Frefsubsecname</span><span class="nb">}{</span>Subsection<span class="nb">}}</span>
+
+<span class="k">\frefformat</span><span class="nb">{</span>plain<span class="nb">}{</span><span class="k">\fancyrefsubseclabelprefix</span><span class="nb">}{</span><span class="k">\frefsubsecname\fancyrefdefaultspacing</span>#1<span class="nb">}</span>
+<span class="k">\Frefformat</span><span class="nb">{</span>plain<span class="nb">}{</span><span class="k">\fancyrefsubseclabelprefix</span><span class="nb">}{</span><span class="k">\Frefsubsecname\fancyrefdefaultspacing</span>#1<span class="nb">}</span>
+
+<span class="k">\frefformat</span><span class="nb">{</span>vario<span class="nb">}{</span><span class="k">\fancyrefsubseclabelprefix</span><span class="nb">}{</span><span class="k">\frefsubsecname\fancyrefdefaultspacing</span>#1#3<span class="nb">}</span>
+
+<span class="k">\Frefformat</span><span class="nb">{</span>vario<span class="nb">}{</span><span class="k">\fancyrefsubseclabelprefix</span><span class="nb">}{</span><span class="k">\Frefsubsecname\fancyrefdefaultspacing</span>#1#3<span class="nb">}</span></code></pre></figure>
+
+<p>These are just some of the things I’ve done to improve my thesis’ LaTeX experience. You can see all of my changes on its <a href="http://github.com/atyndall/honours">repository page</a>.</p>
+
+        <hr />
+        <p style="font-size:smaller;"><em>Noticed a problem with this post? Leave a comment or <a href="https://github.com/atyndall/atyndall.github.io/blob/source/_posts/2014-09-19-thesis-in-latex.md">submit a pull request</a>.</em></p>
+        <div id="disqus_thread"></div><!-- /#disqus_thread -->
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://ash.id.au/post/2014/09/01/capslock-for-search/" class="btn" title="Using Caps Lock for Windows 8 search">Previous article</a>
+      
+      
+        <a href="http://ash.id.au/post/2015/01/18/progress-update/" class="btn" title="January progress update">Next article</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <!-- &copy; 2025 Ash Tyndall. Powered by Jekyll using http://mademistakes.com/so-simple/. -->
+<div class="social-icons">
+  <a href="mailto:hi@ash.id.au" title="Email Ash" target="_blank"><i class="icon-envelope icon-2x"></i></a>
+	<a href="http://github.com/atyndall" title="Ash on Github" target="_blank"><i class="icon-github icon-2x"></i></a>
+	<a href="http://linkedin.com/in/ashtyndall/" title="Ash on LinkedIn" target="_blank"><i class="icon-linkedin icon-2x"></i></a>
+	<a href="http://twitter.com/atyndall" title="Ash on Twitter" target="_blank"><i class="icon-twitter icon-2x"></i></a>
+	
+	
+	
+	
+	
+	
+	
+</div><!-- /.social-icons -->
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://ash.id.au/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://ash.id.au/assets/js/scripts.min.js"></script>
+
+<!-- Jekyll Simple Search option -->
+<script>
+  $(document).ready(function() {
+      $('.search-field').simpleJekyllSearch({
+          jsonFile : 'http://ash.id.au/search.json',
+          searchResults : '.search-results',
+          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          noResults: '<p>Nothing found.</p>'
+        });
+  });
+
+  (function( $, window, undefined ) {
+    
+     var bs = {
+          close: $(".icon-remove-sign"),
+          searchform: $(".search-form"),
+          canvas: $("body"),
+          dothis: $('.dosearch')
+      };
+    
+    bs.dothis.on('click', function() {
+      $('.search-wrapper').css({ display: "block" });
+      bs.searchform.toggleClass('active');
+      bs.searchform.find('input').focus();
+      bs.canvas.toggleClass('search-overlay');
+    });
+    
+      bs.close.on('click', function() {
+        $('.search-wrapper').removeAttr( 'style' );
+        bs.searchform.toggleClass('active');
+        bs.canvas.removeClass('search-overlay');
+    });
+  })( jQuery, window );
+</script>
+
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNW0R3VBD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZGNW0R3VBD');
+</script>
+<!-- End Google Analytics -->
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'atyndall'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>	        
+
+</body>
+</html>

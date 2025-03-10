@@ -1,0 +1,237 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Ash Tyndall // Using Caps Lock for Windows 8 search</title>
+<meta name="description" content="">
+<meta name="keywords" content="productivity">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ash.id.au/images/square200.jpg">
+<meta name="twitter:title" content="Using Caps Lock for Windows 8 search">
+<meta name="twitter:description" content="">
+<meta name="twitter:creator" content="@atyndall">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Using Caps Lock for Windows 8 search">
+<meta property="og:description" content="">
+<meta property="og:url" content="http://ash.id.au/post/2014/09/01/capslock-for-search/">
+<meta property="og:site_name" content="Ash Tyndall">
+
+
+
+
+
+<link rel="canonical" href="http://ash.id.au/post/2014/09/01/capslock-for-search/">
+<link href="http://ash.id.au/feed.xml" type="application/atom+xml" rel="alternate" title="Ash Tyndall Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/assets/css/main.min.css">
+<!-- Webfonts -->
+<script src="//use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+
+</head>
+
+<body id="post">
+
+<header class="masthead">
+	<div class="wrap">
+        
+        <a href="http://ash.id.au" class="site-logo" rel="home" title="Ash Tyndall"><img src="http://ash.id.au/images/square200.jpg" width="200" height="200" alt="Ash Tyndall logo" class="animated fadeInUp"></a>
+        
+	</div>
+</header><!-- /.masthead -->
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <span class="entry-tags"><a href="/tags/#productivity" title="Pages tagged productivity">productivity</a></span>
+        
+          <h1 class="entry-title">Using Caps Lock for Windows 8 search</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        <span class="entry-date date published"><time datetime="2014-09-01T00:00:00+08:00"><i class="icon-calendar-empty"></i> September 01, 2014</time></span>
+        
+        <span class="entry-comments"><i class="icon-comment-alt"></i> <a href="#disqus_thread">Comment</a></span>
+        <span><a href="http://ash.id.au/post/2014/09/01/capslock-for-search/" rel="bookmark" title="Using Caps Lock for Windows 8 search"><i class="icon-link"></i> Permalink</a></span>
+        
+      </footer>
+      <div class="entry-content">
+        <p>Since upgrading to Windows 8, I’ve found that even with <a href="http://classicshell.net">Classic Shell</a>, I’m using the Windows 8 search function in pretty much every situation I would access the Start Menu.</p>
+
+<p>Before Classic Shell, I was triggering the search by pressing the Windows key, then typing on the Start tile screen. However, I found it too distracting.</p>
+
+<p>A much less distracting search is the one triggered by pressing <code>Windows + S</code>; it slides in from the side. However, it’s also a fiddly key combination. It would be much easier if I could map a unused key on my keyboard specifically to that; something like Caps Lock.</p>
+
+<p>I did some investigation into the best way to remap it, and I couldn’t seem to find anything on how to change the Search trigger from <code>Windows + S</code> in the registry. I looked into <a href="http://www.experts-exchange.com/OS/Microsoft_Operating_Systems/Windows/A_2155-Keyboard-Remapping-CAPSLOCK-to-Ctrl-and-Beyond.html">scancode remapping</a>, however while I have seen Windows 8 laptops with a dedicated search key, it doesn’t appear it is mapped to a scancode.</p>
+
+<h1 id="the-solution">The Solution</h1>
+<p>It seems like the best approach was to develop an <a href="http://autohotkey.com">AutoHotkey</a> script for the purpose.</p>
+
+<p>I downloaded, installed, and opened AHK, choosing Yes to create the “sample script”. After some testing, to get what I wanted I needed to remove the sample code and add;</p>
+
+<figure class="highlight"><pre><code class="language-autohotkey" data-lang="autohotkey"><span></span><span class="c1">; CapsLock performs search</span>
+<span class="nl">CapsLock::</span><span class="n">#s</span></code></pre></figure>
+
+<p>instead, then place a shortcut to the script (it’s in My Documents) in <code>%AppData%\Microsoft\Windows\Start Menu\Programs\Startup</code>. This causes the AutoHotkey script to run at startup, configuring the Caps Lock key to trigger <code>Windows + S</code>.</p>
+
+<p>Another script that I found on the <a href="http://www.autohotkey.com/board/topic/4554-entering-commands-using-double-tapped-shift/">AutoHotkey foums</a> was repurposed to toggle Caps Lock by double-tapping the Shift key. However, I have turned this off, as my typing style seems to trigger it accidentally: Your mileage may vary.</p>
+
+<figure class="highlight"><pre><code class="language-autohotkey" data-lang="autohotkey"><span></span><span class="c1">; Double-tapping Shift enables CapsLock</span>
+<span class="nl">Shift::</span>
+<span class="n">if</span> <span class="p">(</span><span class="nv">A_PriorHotkey</span> <span class="o">&lt;&gt;</span> <span class="s">&quot;Shift&quot;</span> <span class="ow">or</span> <span class="nv">A_TimeSincePriorHotkey</span> <span class="o">&gt;</span> <span class="mi">300</span><span class="p">)</span>
+<span class="p">{</span><span class="c1"></span>
+<span class="c1">   ; Too much time between presses, so this isn&#39;t a double-press.</span>
+    <span class="nb">KeyWait</span><span class="p">,</span> <span class="n">Shift</span>
+    <span class="nb">return</span>
+<span class="p">}</span>
+	<span class="nb">if </span><span class="nf">GetKeyState</span><span class="p">(</span><span class="s">&quot;CapsLock&quot;</span><span class="p">,</span> <span class="s">&quot;T&quot;</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1</span>
+	 <span class="p">{</span>
+ 	  <span class="nb">SetCapsLockState</span><span class="p">,</span> <span class="n">off</span>
+	 <span class="p">}</span>
+	<span class="nb">else</span> <span class="n">if</span> <span class="nf">GetKeyState</span><span class="p">(</span><span class="s">&quot;CapsLock&quot;</span><span class="p">,</span> <span class="s">&quot;F&quot;</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span>
+	 <span class="p">{</span>
+	   <span class="nb">SetCapsLockState</span><span class="p">,</span> <span class="n">on</span>
+	 <span class="p">}</span>
+<span class="nb">return</span></code></pre></figure>
+
+<p>While simple, I’ve found both these scripts to be very useful.</p>
+
+        <hr />
+        <p style="font-size:smaller;"><em>Noticed a problem with this post? Leave a comment or <a href="https://github.com/atyndall/atyndall.github.io/blob/source/_posts/2014-09-01-capslock-for-search.md">submit a pull request</a>.</em></p>
+        <div id="disqus_thread"></div><!-- /#disqus_thread -->
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://ash.id.au/post/2014/08/27/sensors-and-unforeseen-roadblocks/" class="btn" title="Infrared sensors and unforeseen roadblocks">Previous article</a>
+      
+      
+        <a href="http://ash.id.au/post/2014/09/19/thesis-in-latex/" class="btn" title="Useful tips for writing a thesis in LaTeX">Next article</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <!-- &copy; 2025 Ash Tyndall. Powered by Jekyll using http://mademistakes.com/so-simple/. -->
+<div class="social-icons">
+  <a href="mailto:hi@ash.id.au" title="Email Ash" target="_blank"><i class="icon-envelope icon-2x"></i></a>
+	<a href="http://github.com/atyndall" title="Ash on Github" target="_blank"><i class="icon-github icon-2x"></i></a>
+	<a href="http://linkedin.com/in/ashtyndall/" title="Ash on LinkedIn" target="_blank"><i class="icon-linkedin icon-2x"></i></a>
+	<a href="http://twitter.com/atyndall" title="Ash on Twitter" target="_blank"><i class="icon-twitter icon-2x"></i></a>
+	
+	
+	
+	
+	
+	
+	
+</div><!-- /.social-icons -->
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://ash.id.au/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://ash.id.au/assets/js/scripts.min.js"></script>
+
+<!-- Jekyll Simple Search option -->
+<script>
+  $(document).ready(function() {
+      $('.search-field').simpleJekyllSearch({
+          jsonFile : 'http://ash.id.au/search.json',
+          searchResults : '.search-results',
+          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          noResults: '<p>Nothing found.</p>'
+        });
+  });
+
+  (function( $, window, undefined ) {
+    
+     var bs = {
+          close: $(".icon-remove-sign"),
+          searchform: $(".search-form"),
+          canvas: $("body"),
+          dothis: $('.dosearch')
+      };
+    
+    bs.dothis.on('click', function() {
+      $('.search-wrapper').css({ display: "block" });
+      bs.searchform.toggleClass('active');
+      bs.searchform.find('input').focus();
+      bs.canvas.toggleClass('search-overlay');
+    });
+    
+      bs.close.on('click', function() {
+        $('.search-wrapper').removeAttr( 'style' );
+        bs.searchform.toggleClass('active');
+        bs.canvas.removeClass('search-overlay');
+    });
+  })( jQuery, window );
+</script>
+
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNW0R3VBD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZGNW0R3VBD');
+</script>
+<!-- End Google Analytics -->
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'atyndall'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>	        
+
+</body>
+</html>

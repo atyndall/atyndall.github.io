@@ -1,0 +1,371 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Ash Tyndall // Shortlisting Hardware</title>
+<meta name="description" content="">
+<meta name="keywords" content="honours">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ash.id.au/images/square200.jpg">
+<meta name="twitter:title" content="Shortlisting Hardware">
+<meta name="twitter:description" content="">
+<meta name="twitter:creator" content="@atyndall">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Shortlisting Hardware">
+<meta property="og:description" content="">
+<meta property="og:url" content="http://ash.id.au/post/2014/08/05/shortlisting-hardware/">
+<meta property="og:site_name" content="Ash Tyndall">
+
+
+
+
+
+<link rel="canonical" href="http://ash.id.au/post/2014/08/05/shortlisting-hardware/">
+<link href="http://ash.id.au/feed.xml" type="application/atom+xml" rel="alternate" title="Ash Tyndall Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/assets/css/main.min.css">
+<!-- Webfonts -->
+<script src="//use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+
+</head>
+
+<body id="post">
+
+<header class="masthead">
+	<div class="wrap">
+        
+        <a href="http://ash.id.au" class="site-logo" rel="home" title="Ash Tyndall"><img src="http://ash.id.au/images/square200.jpg" width="200" height="200" alt="Ash Tyndall logo" class="animated fadeInUp"></a>
+        
+	</div>
+</header><!-- /.masthead -->
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <span class="entry-tags"><a href="/tags/#honours" title="Pages tagged honours">honours</a></span>
+        
+          <h1 class="entry-title">Shortlisting Hardware</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        <span class="entry-date date published"><time datetime="2014-08-05T00:00:00+08:00"><i class="icon-calendar-empty"></i> August 05, 2014</time></span>
+        
+        <span class="entry-comments"><i class="icon-comment-alt"></i> <a href="#disqus_thread">Comment</a></span>
+        <span><a href="http://ash.id.au/post/2014/08/05/shortlisting-hardware/" rel="bookmark" title="Shortlisting Hardware"><i class="icon-link"></i> Permalink</a></span>
+        
+      </footer>
+      <div class="entry-content">
+        <p>I’m learning rapidly that the area of occupancy is booming at the moment, and the set of possible options for sensors and host hardware is of considerable size.</p>
+
+<p>To help trim down my list to a set of viable and non-viable candidates, I’ve needed to come up with a more stringent set of criteria, and measure possible solutions against them.</p>
+
+<h1 id="criteria">Criteria</h1>
+<p>The set of criteria I am attempting to optimise for are:</p>
+
+<ul>
+  <li>
+    <p><strong>Cost</strong>; the set of components required should aim to minimise cost, as these devices are intended to be deployed in situations where the user may not have much money.</p>
+  </li>
+  <li>
+    <p><strong>Invasiveness</strong>; the sensors used in the system should gather as little information as necessary to achieve the detection goal; there are privacy concerns with the use of high-definition sensors.</p>
+  </li>
+  <li>
+    <p><strong>Energy Efficiency</strong>; the system may be placed in a situation where there is no access to mains power, so ability to survive for long periods on only battery power is advantageous.</p>
+  </li>
+  <li>
+    <p><strong>Reliability</strong>; the system should be able to operate without user intervention or frequent maintenance, and should be able to perform its multi-occupant detection goal with a high degree of accuracy.</p>
+  </li>
+</ul>
+
+<h1 id="host-options">Host options</h1>
+<p>There are are a variety of options for configurations that can host the sensor:</p>
+
+<ul>
+  <li>
+    <p><strong>Raspberry Pi (battery)</strong>: A Raspberry Pi with a set of sensors connected to it operates on a rechargeable battery pack.</p>
+  </li>
+  <li>
+    <p><strong>Raspberry Pi &amp; Sleepy Pi (battery)</strong>: A Raspberry Pi with the <a href="http://spellfoundry.com/products/sleepy-pi/">Sleepy Pi</a> addon operates on a wake-sleep cycle with a set of sensors connected to it.</p>
+  </li>
+  <li>
+    <p><strong>Arduino (battery)</strong>: An Arduino board with a set of sensors connected operates on a rechargeable battery pack, with on board data processing.</p>
+  </li>
+  <li>
+    <p><strong>Raspberry Pi (mains), Arduino (battery)</strong>: An Arduino board with a set of sensors connected operates on a rechargeable battery pack. A Raspberry Pi communicates with it and handles the data processing aspect.</p>
+  </li>
+  <li>
+    <p><strong>TMote Sky (battery)</strong>: A MoteIV Tmote Sky, the same as that used in the ThermoSense paper. <a href="#beltran2013thermosense">[1]</a></p>
+  </li>
+</ul>
+
+<h1 id="sensor-options">Sensor options</h1>
+<p>There are similarly a variety of sensors that can either be used directly, or act as proxies for occupancy in a given area.</p>
+
+<ul>
+  <li>
+    <p><strong>Thermal Array</strong>: A thermal array is used to measure temperatures in different sections of a room. The use of them to detect occupancy is covered in multiple papers. <a href="#erickson2013thermosense">[2]</a>, <a href="#erickson2013toss">[3]</a></p>
+  </li>
+  <li>
+    <p><strong>Tagging</strong>: By assuming occupants have smartphones, it is possible to use them as a proxy for occupancy. <a href="#kleiminger2013using">[4]</a></p>
+  </li>
+  <li>
+    <p><strong>Ultrasonic</strong>: Through the use of ultrasonic measurement of distance, passage through doorways can be directionally measured. <a href="#hnat2012doorjamb">[5]</a></p>
+  </li>
+  <li>
+    <p><strong>Power Consumption</strong>: By assuming occupants will switch on electronic devices when they enter a room, broad power consumption can act as a proxy for occupancy. <a href="#kleiminger2013occupancy">[6]</a></p>
+  </li>
+  <li>
+    <p><strong>Network traffic</strong>: By assuming occupants will use computers when they enter a room, network traffic can act as a proxy for occupancy. <a href="#ting2013occupancy">[7]</a></p>
+  </li>
+  <li>
+    <p><strong>Cameras</strong>: Computer Vision algorithms can be used on video and images to determine the number of people present in the scene. <a href="#erickson2013poem">[8]</a></p>
+  </li>
+  <li>
+    <p><strong>Fusion</strong>: Multiple different solutions can be combined to help optimise over multiple criteria. <a href="#yang2012multi">[9]</a></p>
+  </li>
+</ul>
+
+<h1 id="comparison">Comparison</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Host</th>
+      <th style="text-align: center">Cost</th>
+      <th style="text-align: center">Energy Efficiency</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">RPi</td>
+      <td style="text-align: center">$50</td>
+      <td style="text-align: center">1000mA</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">RPi &amp; SleepyPi</td>
+      <td style="text-align: center">$105</td>
+      <td style="text-align: center">dependent</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Arduino Yun</td>
+      <td style="text-align: center">$70</td>
+      <td style="text-align: center">500MA</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Arduino Uno</td>
+      <td style="text-align: center">$125</td>
+      <td style="text-align: center">50mA</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">TMote Sky</td>
+      <td style="text-align: center">$105</td>
+      <td style="text-align: center">25mA</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Cost includes that of compatible 802.11 adaptor if it doesn’t have built in wireless capabilities.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Sensor</th>
+      <th style="text-align: center">Type</th>
+      <th style="text-align: center">Cost</th>
+      <th style="text-align: center">Invasiveness</th>
+      <th style="text-align: center">Reliability</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Grid-Eye</td>
+      <td style="text-align: center">Thermal</td>
+      <td style="text-align: center">$30</td>
+      <td style="text-align: center">Low</td>
+      <td style="text-align: center">High</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">802.11 card</td>
+      <td style="text-align: center">Tagging</td>
+      <td style="text-align: center">$15</td>
+      <td style="text-align: center">Low</td>
+      <td style="text-align: center">Medium</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">HC-SR04</td>
+      <td style="text-align: center">Ultrasonic</td>
+      <td style="text-align: center">$5</td>
+      <td style="text-align: center">Low</td>
+      <td style="text-align: center">Low</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">OV7670</td>
+      <td style="text-align: center">Camera (Arduino)</td>
+      <td style="text-align: center">$10</td>
+      <td style="text-align: center">High</td>
+      <td style="text-align: center">Low</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">OV5647</td>
+      <td style="text-align: center">Camera (RPi)</td>
+      <td style="text-align: center">$40</td>
+      <td style="text-align: center">High</td>
+      <td style="text-align: center">High</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>I’ll be evaluating these options over the next week.</p>
+
+<h1 id="references">References</h1>
+<ol class="bibliography"><li><span id="beltran2013thermosense">A. Beltran, V. L. Erickson, and A. E. Cerpa, “ThermoSense: Occupancy Thermal Based Sensing for HVAC Control,” in <i>Proceedings of the 5th ACM Workshop on Embedded Systems For Energy-Efficient Buildings</i>, 2013, pp. 1–8.</span></li>
+<li><span id="erickson2013thermosense">V. L. Erickson, A. Beltran, D. A. Winkler, N. P. Esfahani, J. R. Lusby, and A. E. Cerpa, “ThermoSense: thermal array sensor networks in building management,” in <i>Proceedings of the 11th ACM Conference on Embedded Networked Sensor Systems</i>, 2013, p. 87.</span></li>
+<li><span id="erickson2013toss">V. L. Erickson, A. Beltran, D. A. Winkler, N. P. Esfahani, J. R. Lusby, and A. E. Cerpa, “TOSS: Thermal Occupancy Sensing System,” in <i>Proceedings of the 5th ACM Workshop on Embedded Systems For Energy-Efficient Buildings</i>, 2013, pp. 1–2.</span></li>
+<li><span id="kleiminger2013using">W. Kleiminger, C. Beckel, A. Dey, and S. Santini, “Using unlabeled Wi-Fi scan data to discover occupancy patterns of private households,” in <i>Proceedings of the 11th ACM Conference on Embedded Networked Sensor Systems</i>, 2013, p. 47.</span></li>
+<li><span id="hnat2012doorjamb">T. W. Hnat, E. Griffiths, R. Dawson, and K. Whitehouse, “Doorjamb: unobtrusive room-level tracking of people in homes using doorway sensors,” in <i>Proceedings of the 10th ACM Conference on Embedded Network Sensor Systems</i>, 2012, pp. 309–322.</span></li>
+<li><span id="kleiminger2013occupancy">W. Kleiminger, C. Beckel, T. Staake, and S. Santini, “Occupancy detection from electricity consumption data,” in <i>Proceedings of the 5th ACM Workshop on Embedded Systems For Energy-Efficient Buildings</i>, 2013, pp. 1–8.</span></li>
+<li><span id="ting2013occupancy">K. Ting, R. Yu, and M. Srivastava, “Occupancy inferencing from non-intrusive data sources,” in <i>Proceedings of the 5th ACM Workshop on Embedded Systems For Energy-Efficient Buildings</i>, 2013, pp. 1–2.</span></li>
+<li><span id="erickson2013poem">V. L. Erickson, S. Achleitner, and A. E. Cerpa, “POEM: Power-efficient occupancy-based energy management system,” in <i>Proceedings of the 12th international conference on Information processing in sensor networks</i>, 2013, pp. 203–216.</span></li>
+<li><span id="yang2012multi">Z. Yang, N. Li, B. Becerik-Gerber, and M. Orosz, “A multi-sensor based occupancy estimation model for supporting demand driven HVAC operations,” in <i>Proceedings of the 2012 Symposium on Simulation for Architecture and Urban Design</i>, 2012, p. 2.</span></li></ol>
+
+
+        <hr />
+        <p style="font-size:smaller;"><em>Noticed a problem with this post? Leave a comment or <a href="https://github.com/atyndall/atyndall.github.io/blob/source/_posts/2014-08-05-shortlisting-hardware.md">submit a pull request</a>.</em></p>
+        <div id="disqus_thread"></div><!-- /#disqus_thread -->
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://ash.id.au/post/2014/07/31/the-sensing-trifecta/" class="btn" title="The Sensing Trifecta">Previous article</a>
+      
+      
+        <a href="http://ash.id.au/post/2014/08/13/research-proposal/" class="btn" title="Research Proposal">Next article</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <!-- &copy; 2025 Ash Tyndall. Powered by Jekyll using http://mademistakes.com/so-simple/. -->
+<div class="social-icons">
+  <a href="mailto:hi@ash.id.au" title="Email Ash" target="_blank"><i class="icon-envelope icon-2x"></i></a>
+	<a href="http://github.com/atyndall" title="Ash on Github" target="_blank"><i class="icon-github icon-2x"></i></a>
+	<a href="http://linkedin.com/in/ashtyndall/" title="Ash on LinkedIn" target="_blank"><i class="icon-linkedin icon-2x"></i></a>
+	<a href="http://twitter.com/atyndall" title="Ash on Twitter" target="_blank"><i class="icon-twitter icon-2x"></i></a>
+	
+	
+	
+	
+	
+	
+	
+</div><!-- /.social-icons -->
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://ash.id.au/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://ash.id.au/assets/js/scripts.min.js"></script>
+
+<!-- Jekyll Simple Search option -->
+<script>
+  $(document).ready(function() {
+      $('.search-field').simpleJekyllSearch({
+          jsonFile : 'http://ash.id.au/search.json',
+          searchResults : '.search-results',
+          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          noResults: '<p>Nothing found.</p>'
+        });
+  });
+
+  (function( $, window, undefined ) {
+    
+     var bs = {
+          close: $(".icon-remove-sign"),
+          searchform: $(".search-form"),
+          canvas: $("body"),
+          dothis: $('.dosearch')
+      };
+    
+    bs.dothis.on('click', function() {
+      $('.search-wrapper').css({ display: "block" });
+      bs.searchform.toggleClass('active');
+      bs.searchform.find('input').focus();
+      bs.canvas.toggleClass('search-overlay');
+    });
+    
+      bs.close.on('click', function() {
+        $('.search-wrapper').removeAttr( 'style' );
+        bs.searchform.toggleClass('active');
+        bs.canvas.removeClass('search-overlay');
+    });
+  })( jQuery, window );
+</script>
+
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNW0R3VBD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZGNW0R3VBD');
+</script>
+<!-- End Google Analytics -->
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'atyndall'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>	        
+
+</body>
+</html>

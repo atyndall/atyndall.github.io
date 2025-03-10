@@ -1,37 +1,795 @@
----
-layout: none
----
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
-<title type="text">{{ site.title }}</title>
+<title type="text">Ash Tyndall</title>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="{{ site.url }}/feed.xml" />
-<link rel="alternate" type="text/html" href="{{ site.url }}" />
-<updated>{{ site.time | date_to_xmlschema }}</updated>
-<id>{{ site.url }}/</id>
+<link rel="self" type="application/atom+xml" href="http://ash.id.au/feed.xml" />
+<link rel="alternate" type="text/html" href="http://ash.id.au" />
+<updated>2025-03-10T11:46:32+08:00</updated>
+<id>http://ash.id.au/</id>
 <author>
-  <name>{{ site.owner.name }}</name>
-  <uri>{{ site.url }}/</uri>
-  <email>{{ site.owner.email }}</email>
+  <name>Ash Tyndall</name>
+  <uri>http://ash.id.au/</uri>
+  <email>hi@ash.id.au</email>
 </author>
-{% for post in site.posts limit:20 %}
+
 
 <entry>
-  <title type="html"><![CDATA[{{ post.title | cdata_escape }}]]></title>
-  <link rel="alternate" type="text/html" href="{% if post.link %}{{ post.link }}?utm_source=rss&amp;utm_campaign=blog&amp;utm_medium=post{% else %}{{ site.url }}{{ post.url }}?utm_source=rss&amp;utm_campaign=blog&amp;utm_medium=post{% endif %}"/>
-  <id>{{ site.url }}{{ post.id }}</id>
-  {% if post.modified %}<updated>{{ post.modified | to_xmlschema }}T00:00:00-00:00</updated>
-  <published>{{ post.date | date_to_xmlschema }}</published>
-  {% else %}<published>{{ post.date | date_to_xmlschema }}</published>
-  <updated>{{ post.date | date_to_xmlschema }}</updated>{% endif %}
+  <title type="html"><![CDATA[January progress update]]></title>
+  <link rel="alternate" type="text/html" href="http://ash.id.au/post/2015/01/18/progress-update/?utm_source=rss&amp;utm_campaign=blog&amp;utm_medium=post"/>
+  <id>http://ash.id.au/post/2015/01/18/progress-update</id>
+  <published>2015-01-18T00:00:00+08:00</published>
+  <updated>2015-01-18T00:00:00+08:00</updated>
   <author>
-    <name>{{ site.owner.name }}</name>
-    <uri>{{ site.url }}</uri>
-    <email>{{ site.owner.email }}</email>
+    <name>Ash Tyndall</name>
+    <uri>http://ash.id.au</uri>
+    <email>hi@ash.id.au</email>
   </author>
-  <content type="html">{{ post.content | xml_escape }}
-  &lt;p&gt;&lt;a href=&quot;{{ site.url }}{{ post.url }}&quot;&gt;{{ post.title }}&lt;/a&gt; was originally published by {{ site.owner.name }} at &lt;a href=&quot;{{ site.url }}&quot;&gt;his personal blog&lt;/a&gt; on {{ post.date | date: "%B %d, %Y" }}.&lt;/p&gt;</content>
+  <content type="html">&lt;p&gt;In the last few weeks I’ve been really getting into the meat of the project; the circuit has been designed and implemented (see Figure 1) and &lt;a href=&quot;https://github.com/atyndall/thing/blob/e9724a30d10fc663a281fe82fd36f850c8118c00/node/mlx90620_driver/mlx90620_driver.ino&quot;&gt;fairly stable software&lt;/a&gt; has been developed for the Arduino to allow it to send the temperature information to the connected computer.&lt;/p&gt;
+
+&lt;p&gt;A &lt;a href=&quot;https://github.com/atyndall/thing/tree/4dfbbee61a46ee16ec59960c54e37212f8100dbf/coordinator/processing/thinglib&quot;&gt;Python library&lt;/a&gt; for the parsing, analysis, recording and visualisation of the sensor data has been developed; currently unimaginatively named “thinglib”. You can part of the visualisation in operation in Figure 2. Hopefully it’ll get a better name when the project does.&lt;/p&gt;
+
+&lt;figure&gt;
+	&lt;a href=&quot;/images/posts/2015-01-18-progress-update/mlx-arduino-circuit.png&quot;&gt;&lt;img src=&quot;/images/posts/2015-01-18-progress-update/mlx-arduino-circuit.png&quot; /&gt;&lt;/a&gt;
+	&lt;figcaption&gt;&lt;a href=&quot;/images/posts/2015-01-18-progress-update/mlx-arduino-circuit.png&quot; title=&quot;MLX Arduino Circuit&quot;&gt;Figure 1: MLX Arduino Circuit&lt;/a&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The above circuit diagram was developed from the actual breadboard connections, and hopefully is an accurate representation of how that all plugs together.&lt;/p&gt;
+
+&lt;figure&gt;
+	&lt;a href=&quot;/images/posts/2015-01-18-progress-update/system-1-full.jpg&quot;&gt;&lt;img src=&quot;/images/posts/2015-01-18-progress-update/system-1-small.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;figcaption&gt;&lt;a href=&quot;/images/posts/2015-01-18-progress-update/system-1-full.jpg&quot; title=&quot;Whole System&quot;&gt;Figure 2: Whole System&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;
+	a) &quot;thinglib&quot; temperature visualisation&lt;br /&gt;
+	b) Raspberry Pi with built-in camera&lt;br /&gt;
+	c) Sensor circuit
+	&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;To allow for the simultaneous capture of visual and thermal data, I’ve stuck the sensor and a Raspberry Pi to the same piece of board, close enough hopefully to eliminate most FOV issues.&lt;/p&gt;
+
+&lt;figure&gt;
+	&lt;a href=&quot;/images/posts/2015-01-18-progress-update/system-2-full.jpg&quot;&gt;&lt;img src=&quot;/images/posts/2015-01-18-progress-update/system-2-small.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;figcaption&gt;&lt;a href=&quot;/images/posts/2015-01-18-progress-update/system-2-full.jpg&quot; title=&quot;Circuit Closeup&quot;&gt;Figure 2: Circuit Closeup&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;
+	a) Sensor itself&lt;br /&gt;
+	b) I2C level shifter&lt;br /&gt;
+	c) Arduino Uno R3
+	&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;In the current design the sensor sends the calculated raw temperature over serial to a computer where “thinglib” parses it and visualizes it.&lt;/p&gt;
+
+&lt;figure&gt;
+	&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//www.youtube.com/embed/uCtErT1JISk&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+	&lt;figcaption&gt;Figure 3: First Sensor Test&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;This is the first test I did of capturing both the thermal data from the sensor and the visual data from the Pi, then overlaying the two. They’re not overlayed correctly, and it goes pretty badly out of sync at the end, but it’ll be a useful debugging tool.&lt;/p&gt;
+
+&lt;figure&gt;
+	&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//www.youtube.com/embed/NmK1knOOhck&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+	&lt;figcaption&gt;Figure 4: Deviation Code Test&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;This is a test using a cup of hot water of the standard deviation calculation code which is used to separate the “thermal background” from the image, so that analysis can be performed on the image results. Currently the extraction of the feature vectors required for the classifier techniques is complete, so now the question is to implement the classifiers.&lt;/p&gt;
+
+&lt;p&gt;Much is left to do.&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://ash.id.au/post/2015/01/18/progress-update/&quot;&gt;January progress update&lt;/a&gt; was originally published by Ash Tyndall at &lt;a href=&quot;http://ash.id.au&quot;&gt;his personal blog&lt;/a&gt; on January 18, 2015.&lt;/p&gt;</content>
 </entry>
-{% endfor %}
+
+
+<entry>
+  <title type="html"><![CDATA[Useful tips for writing a thesis in LaTeX]]></title>
+  <link rel="alternate" type="text/html" href="http://ash.id.au/post/2014/09/19/thesis-in-latex/?utm_source=rss&amp;utm_campaign=blog&amp;utm_medium=post"/>
+  <id>http://ash.id.au/post/2014/09/19/thesis-in-latex</id>
+  <published>2014-09-19T00:00:00+08:00</published>
+  <updated>2014-09-19T00:00:00+08:00</updated>
+  <author>
+    <name>Ash Tyndall</name>
+    <uri>http://ash.id.au</uri>
+    <email>hi@ash.id.au</email>
+  </author>
+  <content type="html">&lt;p&gt;These recent weeks I have been working on the &lt;a href=&quot;https://github.com/atyndall/honours/tree/master/litreview&quot;&gt;literature review&lt;/a&gt; section of my thesis, and while doing that I’ve been trying to use LaTeX packages to make that experience as easy as possible. I’ll outline some of the things I’ve done here.&lt;/p&gt;
+
+&lt;h2 id=&quot;use-subfiles-for-a-modular-thesis&quot;&gt;Use &lt;code&gt;subfiles&lt;/code&gt; for a modular thesis&lt;/h2&gt;
+&lt;p&gt;The first thing I realised was that my thesis is going to very quickly get unwieldy if it is all contained in one document. I did some research, and I found that the &lt;a href=&quot;http://www.ctan.org/tex-archive/macros/latex/contrib/subfiles&quot;&gt;&lt;code&gt;subfiles&lt;/code&gt;&lt;/a&gt; package was well suited to my situation.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;subfiles&lt;/code&gt; allows you to have separate LaTeX files for different chapters, while allowing you to still compile both the chapters separately, and the whole document. This is great, as while I’m working on the literature review section, for instance, I don’t want to waste my time compiling my whole thesis document when all I care about is one section.&lt;/p&gt;
+
+&lt;p&gt;This is the directory structure of my thesis;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;honours/
+├── cshonours.cls
+├── discussion
+│   └── discussion.tex
+├── introduction
+│   └── introduction.tex
+├── litreview
+│   └── litreview.tex
+├── methods
+│   └── methods.tex
+├── proposal
+│   └── proposal.tex
+├── references
+│   └── primary.bib
+├── results
+│   └── results.tex
+└── thesis
+    └── thesis.tex
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Using subfiles is pretty easy; what it does is copies the header of your “main document” to your subdocuments. I have my main document, &lt;code&gt;thesis/thesis.tex&lt;/code&gt;, which looks similar to this;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\documentclass&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;../cshonours&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;subfiles&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;etoolbox&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;% Configure bibliography&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\bibliographystyle&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;acm&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\defaultbibliography&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;../references/primary&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\defaultbibliographystyle&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;acm&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\begin&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;document&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\newcommand&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\mainfile&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;}{}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;% we use the existence of this command to see if we&amp;#39;re compiling the whole thesis or just a chapter&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\subfile&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;../introduction/introduction&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\subfile&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;../litreview/litreview&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\subfile&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;../methods/methods&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\subfile&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;../results/results&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\subfile&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;../discussion/discussion&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\bibliography&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;../references/primary&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\end&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;document&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;and a bunch of subfiles like my literature review chapter, &lt;code&gt;litreview/litreview.tex&lt;/code&gt;, which look like this;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\documentclass&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[../thesis/thesis.tex]&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;subfiles&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\begin&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;document&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+ &lt;span class=&quot;k&quot;&gt;\chapter&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;Literature Review&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+ &lt;span class=&quot;k&quot;&gt;\label&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;chap:litreview&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+ 
+ &lt;span class=&quot;c&quot;&gt;% Content goes here&lt;/span&gt;
+ 
+ &lt;span class=&quot;k&quot;&gt;\ifcsdef&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;mainfile&lt;span class=&quot;nb&quot;&gt;}{}{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\bibliography&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;../references/primary&lt;span class=&quot;nb&quot;&gt;}}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\end&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;document&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Both documents can be successfully compiled without problems.&lt;/p&gt;
+
+&lt;h3 id=&quot;conditional-actions-with-subfiles&quot;&gt;Conditional actions with &lt;code&gt;subfiles&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;One improvement I’ve made over the default subfiles configuration is the use of &lt;code&gt;\newcommand{\mainfile}{}&lt;/code&gt;. This defines a pointless command called &lt;code&gt;\mainfile&lt;/code&gt; if you are compiling &lt;code&gt;thesis.tex&lt;/code&gt; directly. However, because it is in the body of &lt;code&gt;thesis.tex&lt;/code&gt;, not the header, this command will not be defined if you are compiling an individual chapter.&lt;/p&gt;
+
+&lt;p&gt;This means we can use the &lt;code&gt;\ifcsdef&lt;/code&gt; function (provided by &lt;code&gt;etoolbox&lt;/code&gt;) to check if &lt;code&gt;\mainfile&lt;/code&gt; is defined, and make things print or not print depending on if the document is being compiled as the whole, or just a part.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\ifcsdef&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;mainfile&lt;span class=&quot;nb&quot;&gt;}{}{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\bibliography&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;../references/primary&lt;span class=&quot;nb&quot;&gt;}}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The above line prints a copy of the bibliography after the chapter, provided we’re just compiling the chapter on its own. This is useful, as if I’m working on an individual chapter, I still want to see the bibliography for that specific chapter, but if I’m compiling the whole document, I don’t want to see the bibliography after each chapter.&lt;/p&gt;
+
+&lt;h3 id=&quot;using-the-same-style-file-for-each-subfile&quot;&gt;Using the same style file for each subfile&lt;/h3&gt;
+
+&lt;p&gt;One problem that you run into with &lt;code&gt;subfiles&lt;/code&gt; is that if you have a custom document class file like I do (&lt;code&gt;cshonours.cls&lt;/code&gt;), you can’t write &lt;code&gt;\documentclass{cshonours}&lt;/code&gt; in your main document, or other subfiles will look for the &lt;code&gt;cshonours.cls&lt;/code&gt; file in their own directories, not in the main document’s directory. If LaTeX cannot find the style file there, the compile will fail.&lt;/p&gt;
+
+&lt;p&gt;One way to solve this problem is to have a copy of your &lt;code&gt;.cls&lt;/code&gt; file in each subfiles’ directory, but another trickier way to solve it is to also put your main document (in my case &lt;code&gt;thesis/thesis.tex&lt;/code&gt;) in its own subdirectory, and use a relative path that is correct for all subfiles AND the main file; &lt;code&gt;\documentclass{..\cshonours}&lt;/code&gt;. You’ll get a warning message from LaTeX, but it will compile just fine.&lt;/p&gt;
+
+&lt;h2 id=&quot;acronyms-and-abbreviations&quot;&gt;Acronyms and abbreviations&lt;/h2&gt;
+
+&lt;p&gt;If you’re like me and doing a thesis in an area with a lot of tech, chances are you’re going to be using a lot of acronyms and abbreviations to describe things. I’ve found both the &lt;a href=&quot;http://www.ctan.org/tex-archive/macros/latex/contrib/acronym&quot;&gt;&lt;code&gt;acronyms&lt;/code&gt;&lt;/a&gt; and &lt;a href=&quot;http://www.ctan.org/tex-archive/macros/latex/contrib/frankenstein&quot;&gt;&lt;code&gt;abbrevs&lt;/code&gt;&lt;/a&gt; packages useful for this.&lt;/p&gt;
+
+&lt;p&gt;Here is part of my &lt;code&gt;thesis/thesis.tex&lt;/code&gt; header;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;abbrevs&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;acronym&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;% Acronyms for common stuff&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\acrodef&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;lowpan&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;[6LoWPAN]&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;IPv6 over Low power Wireless Personal Area Networks&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\acrodef&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;coap&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;[CoAP]&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;Constrained Application Protocol&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\acrodef&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;iot&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;[IoT]&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;Internet of Things&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;% Abbreviation commands for common stuff&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\newabbrev\lphy&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;802.15.4-2006&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\newabbrev\lowpan&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\ac&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;lowpan&lt;span class=&quot;nb&quot;&gt;}}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\newabbrev\coap&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\ac&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;coap&lt;span class=&quot;nb&quot;&gt;}}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\newabbrev\iot&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\ac&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;iot&lt;span class=&quot;nb&quot;&gt;}}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;What the &lt;code&gt;\acrodef&lt;/code&gt; does is defines an acronym, which you can then reference with &lt;code&gt;\ac{acroname}&lt;/code&gt;. If you use that, the first time you use it, it will define the whole acronym, and subsequent times, it will just use the acronym. For example;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span&gt;&lt;/span&gt;We can see that &lt;span class=&quot;k&quot;&gt;\ac&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;lowpan&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt; is a good system by which to etc, etc.
+&lt;span class=&quot;k&quot;&gt;\ac&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;lowpan&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt; is also good for x, y, z.&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;will produce&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;We can see that IPv6 over Low power Wireless Personal Area Networks (6LoWPAN) is a good system by which to etc, etc.&lt;br /&gt;
+6LoWPAN is also good for x, y, z.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The abbreviations package is similar, in that it lets you define more simple abbreviations to map to LaTeX commands, or just text. This is different to using &lt;code&gt;\newcommand&lt;/code&gt;, as it handles spacing a lot better. I use it to define some IEEE standards that I mention a lot, as well as even shorter versions of the acronym commands. This allows me to use this, instead of the above;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span&gt;&lt;/span&gt;We can see that &lt;span class=&quot;k&quot;&gt;\lowpan&lt;/span&gt; is a good system by which to etc, etc.
+&lt;span class=&quot;k&quot;&gt;\lowpan&lt;/span&gt; is also good for x, y, z.&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;which I find very convenient.&lt;/p&gt;
+
+&lt;h2 id=&quot;fancyref-support-for-subsections&quot;&gt;&lt;code&gt;fancyref&lt;/code&gt; support for subsections&lt;/h2&gt;
+
+&lt;p&gt;I also use the &lt;a href=&quot;http://www.ctan.org/tex-archive/macros/latex/contrib/fancyref&quot;&gt;&lt;code&gt;fancyref&lt;/code&gt;&lt;/a&gt; package for cross-referencing. &lt;code&gt;fancyref&lt;/code&gt; provides a much smarter cross-referencing system that automatically describes the type of thing you’re referencing, and the page it is on.&lt;/p&gt;
+
+&lt;p&gt;One thing that &lt;code&gt;fancyref&lt;/code&gt; doesn’t seem to have support for is referencing subsections. If you add these commands to your document header, it should be able to reference them;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;% Source; https://github.com/openlilylib/tutorials/blob/master/aGervasoni/orchestralScores/example-materials/OLLbase.sty&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\newcommand*&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\fancyrefsubseclabelprefix&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;subsec&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\fancyrefaddcaptions&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;english&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\providecommand*&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\frefsubsecname&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;subsection&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\providecommand*&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\Frefsubsecname&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;Subsection&lt;span class=&quot;nb&quot;&gt;}}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\frefformat&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;plain&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\fancyrefsubseclabelprefix&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\frefsubsecname\fancyrefdefaultspacing&lt;/span&gt;#1&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\Frefformat&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;plain&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\fancyrefsubseclabelprefix&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\Frefsubsecname\fancyrefdefaultspacing&lt;/span&gt;#1&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\frefformat&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;vario&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\fancyrefsubseclabelprefix&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\frefsubsecname\fancyrefdefaultspacing&lt;/span&gt;#1#3&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\Frefformat&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;vario&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\fancyrefsubseclabelprefix&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\Frefsubsecname\fancyrefdefaultspacing&lt;/span&gt;#1#3&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;These are just some of the things I’ve done to improve my thesis’ LaTeX experience. You can see all of my changes on its &lt;a href=&quot;http://github.com/atyndall/honours&quot;&gt;repository page&lt;/a&gt;.&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://ash.id.au/post/2014/09/19/thesis-in-latex/&quot;&gt;Useful tips for writing a thesis in LaTeX&lt;/a&gt; was originally published by Ash Tyndall at &lt;a href=&quot;http://ash.id.au&quot;&gt;his personal blog&lt;/a&gt; on September 19, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Using Caps Lock for Windows 8 search]]></title>
+  <link rel="alternate" type="text/html" href="http://ash.id.au/post/2014/09/01/capslock-for-search/?utm_source=rss&amp;utm_campaign=blog&amp;utm_medium=post"/>
+  <id>http://ash.id.au/post/2014/09/01/capslock-for-search</id>
+  <published>2014-09-01T00:00:00+08:00</published>
+  <updated>2014-09-01T00:00:00+08:00</updated>
+  <author>
+    <name>Ash Tyndall</name>
+    <uri>http://ash.id.au</uri>
+    <email>hi@ash.id.au</email>
+  </author>
+  <content type="html">&lt;p&gt;Since upgrading to Windows 8, I’ve found that even with &lt;a href=&quot;http://classicshell.net&quot;&gt;Classic Shell&lt;/a&gt;, I’m using the Windows 8 search function in pretty much every situation I would access the Start Menu.&lt;/p&gt;
+
+&lt;p&gt;Before Classic Shell, I was triggering the search by pressing the Windows key, then typing on the Start tile screen. However, I found it too distracting.&lt;/p&gt;
+
+&lt;p&gt;A much less distracting search is the one triggered by pressing &lt;code&gt;Windows + S&lt;/code&gt;; it slides in from the side. However, it’s also a fiddly key combination. It would be much easier if I could map a unused key on my keyboard specifically to that; something like Caps Lock.&lt;/p&gt;
+
+&lt;p&gt;I did some investigation into the best way to remap it, and I couldn’t seem to find anything on how to change the Search trigger from &lt;code&gt;Windows + S&lt;/code&gt; in the registry. I looked into &lt;a href=&quot;http://www.experts-exchange.com/OS/Microsoft_Operating_Systems/Windows/A_2155-Keyboard-Remapping-CAPSLOCK-to-Ctrl-and-Beyond.html&quot;&gt;scancode remapping&lt;/a&gt;, however while I have seen Windows 8 laptops with a dedicated search key, it doesn’t appear it is mapped to a scancode.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-solution&quot;&gt;The Solution&lt;/h1&gt;
+&lt;p&gt;It seems like the best approach was to develop an &lt;a href=&quot;http://autohotkey.com&quot;&gt;AutoHotkey&lt;/a&gt; script for the purpose.&lt;/p&gt;
+
+&lt;p&gt;I downloaded, installed, and opened AHK, choosing Yes to create the “sample script”. After some testing, to get what I wanted I needed to remove the sample code and add;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-autohotkey&quot; data-lang=&quot;autohotkey&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;; CapsLock performs search&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;CapsLock::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;#s&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;instead, then place a shortcut to the script (it’s in My Documents) in &lt;code&gt;%AppData%\Microsoft\Windows\Start Menu\Programs\Startup&lt;/code&gt;. This causes the AutoHotkey script to run at startup, configuring the Caps Lock key to trigger &lt;code&gt;Windows + S&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Another script that I found on the &lt;a href=&quot;http://www.autohotkey.com/board/topic/4554-entering-commands-using-double-tapped-shift/&quot;&gt;AutoHotkey foums&lt;/a&gt; was repurposed to toggle Caps Lock by double-tapping the Shift key. However, I have turned this off, as my typing style seems to trigger it accidentally: Your mileage may vary.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-autohotkey&quot; data-lang=&quot;autohotkey&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;; Double-tapping Shift enables CapsLock&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;Shift::&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;A_PriorHotkey&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Shift&amp;quot;&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;A_TimeSincePriorHotkey&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;   ; Too much time between presses, so this isn&amp;#39;t a double-press.&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;KeyWait&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;return&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;nb&quot;&gt;if &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;GetKeyState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;CapsLock&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;T&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+	 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+ 	  &lt;span class=&quot;nb&quot;&gt;SetCapsLockState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;off&lt;/span&gt;
+	 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;nb&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;GetKeyState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;CapsLock&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;F&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+	 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	   &lt;span class=&quot;nb&quot;&gt;SetCapsLockState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on&lt;/span&gt;
+	 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;return&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;While simple, I’ve found both these scripts to be very useful.&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://ash.id.au/post/2014/09/01/capslock-for-search/&quot;&gt;Using Caps Lock for Windows 8 search&lt;/a&gt; was originally published by Ash Tyndall at &lt;a href=&quot;http://ash.id.au&quot;&gt;his personal blog&lt;/a&gt; on September 01, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Infrared sensors and unforeseen roadblocks]]></title>
+  <link rel="alternate" type="text/html" href="http://ash.id.au/post/2014/08/27/sensors-and-unforeseen-roadblocks/?utm_source=rss&amp;utm_campaign=blog&amp;utm_medium=post"/>
+  <id>http://ash.id.au/post/2014/08/27/sensors-and-unforeseen-roadblocks</id>
+  <published>2014-08-27T00:00:00+08:00</published>
+  <updated>2014-08-27T00:00:00+08:00</updated>
+  <author>
+    <name>Ash Tyndall</name>
+    <uri>http://ash.id.au</uri>
+    <email>hi@ash.id.au</email>
+  </author>
+  <content type="html">&lt;p&gt;One thing that I’ve learned in the past few weeks is that your setbacks can emerge from nowhere, and aren’t necessarily within your control, or even your field.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://people.csse.uwa.edu.au/rachel/&quot;&gt;Rachel&lt;/a&gt; and I agreed that the project should begin with a more general investigation of the sensor capabilities and requirements (the &lt;a href=&quot;/post/2014/08/13/research-proposal/#aim&quot;&gt;reliability&lt;/a&gt; criteria) before branching out into the other areas.&lt;/p&gt;
+
+&lt;p&gt;However when we went to order the Grid-EYE from &lt;a href=&quot;http://www.digikey.com/product-highlights/us/en/panasonic-grid-eye/2108&quot;&gt;Digi-Key&lt;/a&gt;, one of the best contenders in the &lt;a href=&quot;/post/2014/08/05/shortlisting-hardware/#sensor-options&quot;&gt;options examined&lt;/a&gt; we were presented with the following message upon clicking “Add to Cart”;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Due to U.S. export controls, we are unable to add this item to your order.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;Huh?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Confused, I emailed Digi-Key about the issue, asking if there was any way to order the sensor in Australia, and for more information about the restrictions. I got the following response;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Hello, thank you for your inquiry.&lt;/p&gt;
+
+  &lt;p&gt;Thank you for your order.  I apologize, but due to contractual agreements with certain manufacturers; we are unable to supply you with the part .&lt;/p&gt;
+
+  &lt;p&gt;I apologize for any inconvenience this has caused you, and I look forward to doing business with you in the future.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This was very disappointing. The Grid-EYE was looking to be one of the best sensors for our purpose, and now it’s become a difficult part to order. Even if we circumvented the restrictions via a colleague in the United States, using such difficult to acquire sensor would go against the goals of low-cost and easy assembly.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-alternative&quot;&gt;The Alternative&lt;/h1&gt;
+
+&lt;p&gt;For now, we’ve decided to investigate the &lt;a href=&quot;http://www.melexis.com/Infrared-Thermometer-Sensors/Infrared-Thermometer-Sensors/MLX90620-776.aspx&quot;&gt;Melexis MLX90620&lt;/a&gt; as a substitute, as it does not appear to have similar ordering restrictions and seems to be based on similar technologies.&lt;/p&gt;
+
+&lt;p&gt;The primary disadvantage of the sensor is that it is in a 16x4 array, which is far less useful for scanning a square room than the 8x8 arrangement that the Grid-EYE offers. There are videos on YouTube of people hooking the sensor up to stepper motors and rotating it on one axis to get an effective 16x16 thermal array instead. This may be an option for the project.&lt;/p&gt;
+
+&lt;p&gt;For now, getting it working with a RPi for testing purposes is the goal.&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://ash.id.au/post/2014/08/27/sensors-and-unforeseen-roadblocks/&quot;&gt;Infrared sensors and unforeseen roadblocks&lt;/a&gt; was originally published by Ash Tyndall at &lt;a href=&quot;http://ash.id.au&quot;&gt;his personal blog&lt;/a&gt; on August 27, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Research Proposal]]></title>
+  <link rel="alternate" type="text/html" href="http://ash.id.au/post/2014/08/13/research-proposal/?utm_source=rss&amp;utm_campaign=blog&amp;utm_medium=post"/>
+  <id>http://ash.id.au/post/2014/08/13/research-proposal</id>
+  <published>2014-08-13T00:00:00+08:00</published>
+  <updated>2014-08-13T00:00:00+08:00</updated>
+  <author>
+    <name>Ash Tyndall</name>
+    <uri>http://ash.id.au</uri>
+    <email>hi@ash.id.au</email>
+  </author>
+  <content type="html">&lt;p&gt;This week I drafted and submitted my research proposal. Here is a copy converted to markdown. You can find the original in my &lt;a href=&quot;http://github.com/atyndall/honours&quot;&gt;honours git repo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;non-technical-summary&quot;&gt;Non-Technical Summary&lt;/h1&gt;
+&lt;p&gt;With the proportion of elderly and mobility-impaired people growing, and the cost of small computing platforms and sensors dropping, now more than ever we can create low-cost sensor systems to use in a “smart home for the disabled.” One such sensor system is an occupancy sensor, which determines the number of people who are present in a given space. This has many applications in a such a smart home, like climate control, which studies have shown can be more efficient when computer controlled in this way.&lt;/p&gt;
+
+&lt;p&gt;This project will build on existing research to create an occupancy sensor and accompanying detection software that are well suited for a smart home for the disabled. This system will emphasise four key areas; low cost, non-invasiveness, energy efficiency and reliability. At the end of this project, a list of components and corresponding software will be produced, so that anyone can build the sensor prototype. The prototype will also be put to the test in real world situations around the UWA campus.&lt;/p&gt;
+
+&lt;h1 id=&quot;background&quot;&gt;Background&lt;/h1&gt;
+&lt;p&gt;The proportion of elderly and mobility-impaired people is predicted to grow dramatically over the next century, leaving a large proportion of the population unable to care for themselves, and consequently less people able care for these groups. &lt;a href=&quot;#chan2009smart&quot;&gt;[1]&lt;/a&gt; With this issue looming, investments are being made into a variety of technologies that can provide the support these groups need to live independent of human assistance.&lt;/p&gt;
+
+&lt;p&gt;With recent advancements in low cost embedded computing, such as the &lt;a href=&quot;http://arduino.cc/en/Guide/Introduction&quot;&gt;Arduino&lt;/a&gt; and &lt;a href=&quot;http://www.raspberrypi.org/&quot;&gt;Raspberry Pi&lt;/a&gt;, the ability to provide a set of interconnected sensors, actuators and interfaces to enable a low-cost “smart home for the disabled” is becoming increasingly achievable.&lt;/p&gt;
+
+&lt;p&gt;Sensing techniques to determine occupancy, the detection of the presence and number of people in an area, are of particular use to the elderly and disabled. Detection can be used to inform various devices that change state depending on the user’s location, including the better regulation energy hungry devices to help reduce financial burden. Household climate control, which in some regions of Australia accounts for up to 40% of energy usage &lt;a href=&quot;#abs4602&quot;&gt;[2]&lt;/a&gt; is one particular area in which occupancy detection can reduce costs, as efficiency can be increased dramatically with annual energy savings of up to 25% found in some cases. &lt;a href=&quot;#erickson2013thermosense&quot;&gt;[3]&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Significant research has been performed into the occupancy field, with a focus on improving the energy efficiency of both office buildings and households. This is achieved through a variety of sensing means, including thermal arrays, &lt;a href=&quot;#beltran2013thermosense&quot;&gt;[4]&lt;/a&gt; ultrasonic sensors, &lt;a href=&quot;#hnat2012doorjamb&quot;&gt;[5]&lt;/a&gt; smart phone tracking, &lt;a href=&quot;#kleiminger2013using&quot;&gt;[6]&lt;/a&gt;&lt;a href=&quot;#balaji2013sentinel&quot;&gt;[7]&lt;/a&gt; electricity consumption, &lt;a href=&quot;#kleiminger2013occupancy&quot;&gt;[8]&lt;/a&gt; network traffic analysis, &lt;a href=&quot;#ting2013occupancy&quot;&gt;[9]&lt;/a&gt; sound, &lt;a href=&quot;#hailemariam2011real&quot;&gt;[10]&lt;/a&gt; CO2, &lt;a href=&quot;#hailemariam2011real&quot;&gt;[10]&lt;/a&gt; passive infrared, &lt;a href=&quot;#hailemariam2011real&quot;&gt;[10]&lt;/a&gt; video cameras, &lt;a href=&quot;#erickson2013poem&quot;&gt;[11]&lt;/a&gt; and various fusions of the above. &lt;a href=&quot;#yang2012multi&quot;&gt;[12]&lt;/a&gt;&lt;a href=&quot;#ting2013occupancy&quot;&gt;[9]&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;aim&quot;&gt;Aim&lt;/h1&gt;
+&lt;p&gt;While many of the above solutions achieve excellent accuracies, in many cases they suffer from problems of installation logistics, difficult assembly, assumptions on user’s technology ownership and component cost. In a smart home for the disabled, accuracy is important, but accessibility is paramount.&lt;/p&gt;
+
+&lt;p&gt;The goal of this research project is to devise an occupancy detection system that forms part of a larger `smart home for the disabled’ that meets the following accessibility criteria;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Low Cost&lt;/strong&gt;: The set of components required should aim to minimise cost, as these devices are intended to be deployed in situations where the serviced user may be financially restricted.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Non-Invasive&lt;/strong&gt;: The sensors used in the system should gather as little information as necessary to achieve the detection goal; there are privacy concerns with the use of high-definition sensors.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Energy Efficient&lt;/strong&gt;: The system may be placed in a location where there is no access to mains power (i.e. roof), and the retrofitting of appropriate power can be difficult; the ability to survive for long periods on only battery power is advantageous.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Reliable&lt;/strong&gt;: The system should be able to operate without user intervention or frequent maintenance, and should be able to perform its occupancy detection goal with a high degree of accuracy.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Success in this project would involve both&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Devising a bill of materials that can be purchased off-the-shelf, assembled without difficulty, on which a software platform can be installed that performs analysis of the sensor data and provides a simple answer to the occupancy question, and&lt;/li&gt;
+  &lt;li&gt;Using those materials and softwares to create a final demonstration prototype whose success can be tested in controlled and real-world conditions.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This system would be extensible, based on open standards such as REST or CoAP, &lt;a href=&quot;#guinard2012search&quot;&gt;[13]&lt;/a&gt;&lt;a href=&quot;#kovatsch2013coap&quot;&gt;[14]&lt;/a&gt; and could easily fit into a larger `smart home for the disabled’ or internet-of-things system.&lt;/p&gt;
+
+&lt;h1 id=&quot;method&quot;&gt;Method&lt;/h1&gt;
+&lt;p&gt;Achieving these aims involves performing research and development in several discrete phases.&lt;/p&gt;
+
+&lt;h3 id=&quot;hardware&quot;&gt;Hardware&lt;/h3&gt;
+&lt;p&gt;A list of possible sensor candidates will be developed, and these candidates will be ranked according to their adherence to the four accessibility criteria outlined above. Primarily the sensor ranking will consider the cost, invasiveness and reliability of detection, as the sensors themselves do not form a large part of the power requirement.&lt;/p&gt;
+
+&lt;p&gt;Similarly, a list of possible embedded boards to act as the sensor’s host and data analysis platform will be created. Primarily, they will be ranked on cost, energy efficiency and reliability of programming/system stability.&lt;/p&gt;
+
+&lt;p&gt;Low-powered wireless protocols will also be investigated, to determine which is most suitable for the device; providing enough range at low power consumption to allow easy and reliable communication with the hardware.&lt;/p&gt;
+
+&lt;p&gt;Once promising candidates have been identified, components will be purchased and analysed to determine how well they can integrate.&lt;/p&gt;
+
+&lt;h3 id=&quot;classification&quot;&gt;Classification&lt;/h3&gt;
+&lt;p&gt;Depending on the final sensor choice, relevant experiments will be performed to determine the classification algorithm with the best occupancy determination accuracy. This will involve the deployment of a prototype to perform data gathering, as well as another device/person to assess ground truth.&lt;/p&gt;
+
+&lt;h3 id=&quot;robustness--api&quot;&gt;Robustness / API&lt;/h3&gt;
+&lt;p&gt;Once the classification algorithm and hardware are finalised, an easy to use API will be developed to allow the data the device collects to be integrated into a broader system.&lt;/p&gt;
+
+&lt;p&gt;The finalised product will be architected into a easy-to-install software solution that will allow someone without domain knowledge to use the software and corresponding hardware in their own environment.&lt;/p&gt;
+
+&lt;h1 id=&quot;timeline&quot;&gt;Timeline&lt;/h1&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Date&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Task&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Fri 15 August&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;em&gt;Project proposal and project summary due to Coordinator&lt;/em&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;August&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Hardware shortlisting / testing&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;25–29 August&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;em&gt;Project proposal talk presented to research group&lt;/em&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;September&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Literature review&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Fri 19 September&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;em&gt;Draft literature review due to supervisor(s)&lt;/em&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;October - November&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Core Hardware / Software development&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Fri 24 October&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;em&gt;Literature Review and Revised Project Proposal due to Coordinator&lt;/em&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;November - February&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;em&gt;End of year break&lt;/em&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;February&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Write dissertation&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Thu 16 April&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;em&gt;Draft dissertation due to supervisor&lt;/em&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;April - May&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Improve robustness and API&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Thu 30 April&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;em&gt;Draft dissertation available for collection from supervisor&lt;/em&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Fri 8 May&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;em&gt;Seminar title and abstract due to Coordinator&lt;/em&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Mon 25 May&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;em&gt;Final dissertation due to Coordinator&lt;/em&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;25–29 May&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;em&gt;Seminar Presented to Seminar Marking Panel&lt;/em&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Thu 28 May&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;em&gt;Poster Due&lt;/em&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Mon 22 June&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;em&gt;Corrected Dissertation Due to Coordinator&lt;/em&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&quot;software-and-hardware-requirements&quot;&gt;Software and Hardware Requirements&lt;/h1&gt;
+&lt;p&gt;A large part of this research project is determining the specific hardware and software that best fit the accessibility criteria. Because of this, an exhaustive list of software and hardware requirements are not given in this proposal.&lt;/p&gt;
+
+&lt;p&gt;A budget of up to $300 has been allocated by my supervisor for project purchases. Some technologies with promise that will be investigated include;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Raspberry Pi Model B+&lt;/strong&gt; Small form-factor Linux computer: Available from &lt;a href=&quot;http://arduino.cc/en/Guide/Introduction&quot;&gt;here&lt;/a&gt;; $38&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Arduino Uno&lt;/strong&gt; Small form-factor microcontroller: Available from &lt;a href=&quot;http://arduino.cc/en/Main/arduinoBoardUno&quot;&gt;here&lt;/a&gt;; $36&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Panasonic Grid-EYE&lt;/strong&gt; Infrared Array Sensor: Available from &lt;a href=&quot;http://www3.panasonic.biz/ac/e/control/sensor/infrared/grid-eye/index.jsp&quot;&gt;here&lt;/a&gt;; approx. $33&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Passive Infrared Sensor&lt;/strong&gt; Available from various places; $10-$20&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;chan2009smart&quot;&gt;M. Chan, E. Campo, D. Estève, and J.-Y. Fourniols, “Smart homes—current features and future perspectives,” &lt;i&gt;Maturitas&lt;/i&gt;, vol. 64, no. 2, pp. 90–97, 2009.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;abs4602&quot;&gt;Australian Bureau of Statistics, “4602.2 - Household Water and Energy Use, Victoria: Heating and cooling,” Oct. 2011.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;erickson2013thermosense&quot;&gt;V. L. Erickson, A. Beltran, D. A. Winkler, N. P. Esfahani, J. R. Lusby, and A. E. Cerpa, “ThermoSense: thermal array sensor networks in building management,” in &lt;i&gt;Proceedings of the 11th ACM Conference on Embedded Networked Sensor Systems&lt;/i&gt;, 2013, p. 87.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;beltran2013thermosense&quot;&gt;A. Beltran, V. L. Erickson, and A. E. Cerpa, “ThermoSense: Occupancy Thermal Based Sensing for HVAC Control,” in &lt;i&gt;Proceedings of the 5th ACM Workshop on Embedded Systems For Energy-Efficient Buildings&lt;/i&gt;, 2013, pp. 1–8.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;hnat2012doorjamb&quot;&gt;T. W. Hnat, E. Griffiths, R. Dawson, and K. Whitehouse, “Doorjamb: unobtrusive room-level tracking of people in homes using doorway sensors,” in &lt;i&gt;Proceedings of the 10th ACM Conference on Embedded Network Sensor Systems&lt;/i&gt;, 2012, pp. 309–322.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;kleiminger2013using&quot;&gt;W. Kleiminger, C. Beckel, A. Dey, and S. Santini, “Using unlabeled Wi-Fi scan data to discover occupancy patterns of private households,” in &lt;i&gt;Proceedings of the 11th ACM Conference on Embedded Networked Sensor Systems&lt;/i&gt;, 2013, p. 47.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;balaji2013sentinel&quot;&gt;B. Balaji, J. Xu, A. Nwokafor, R. Gupta, and Y. Agarwal, “Sentinel: occupancy based HVAC actuation using existing WiFi infrastructure within commercial buildings,” in &lt;i&gt;Proceedings of the 11th ACM Conference on Embedded Networked Sensor Systems&lt;/i&gt;, 2013, p. 17.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;kleiminger2013occupancy&quot;&gt;W. Kleiminger, C. Beckel, T. Staake, and S. Santini, “Occupancy detection from electricity consumption data,” in &lt;i&gt;Proceedings of the 5th ACM Workshop on Embedded Systems For Energy-Efficient Buildings&lt;/i&gt;, 2013, pp. 1–8.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;ting2013occupancy&quot;&gt;K. Ting, R. Yu, and M. Srivastava, “Occupancy inferencing from non-intrusive data sources,” in &lt;i&gt;Proceedings of the 5th ACM Workshop on Embedded Systems For Energy-Efficient Buildings&lt;/i&gt;, 2013, pp. 1–2.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;hailemariam2011real&quot;&gt;E. Hailemariam, R. Goldstein, R. Attar, and A. Khan, “Real-time occupancy detection using decision trees with multiple sensor types,” in &lt;i&gt;Proceedings of the 2011 Symposium on Simulation for Architecture and Urban Design&lt;/i&gt;, 2011, pp. 141–148.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;erickson2013poem&quot;&gt;V. L. Erickson, S. Achleitner, and A. E. Cerpa, “POEM: Power-efficient occupancy-based energy management system,” in &lt;i&gt;Proceedings of the 12th international conference on Information processing in sensor networks&lt;/i&gt;, 2013, pp. 203–216.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;yang2012multi&quot;&gt;Z. Yang, N. Li, B. Becerik-Gerber, and M. Orosz, “A multi-sensor based occupancy estimation model for supporting demand driven HVAC operations,” in &lt;i&gt;Proceedings of the 2012 Symposium on Simulation for Architecture and Urban Design&lt;/i&gt;, 2012, p. 2.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;guinard2012search&quot;&gt;D. Guinard, I. Ion, and S. Mayer, “In search of an internet of things service architecture: REST or WS-*? A developers’ perspective,” in &lt;i&gt;Mobile and Ubiquitous Systems: Computing, Networking, and Services&lt;/i&gt;, Springer, 2012, pp. 326–337.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;kovatsch2013coap&quot;&gt;M. Kovatsch, “CoAP for the web of things: from tiny resource-constrained devices to the web browser,” in &lt;i&gt;Proceedings of the 2013 ACM conference on Pervasive and ubiquitous computing adjunct publication&lt;/i&gt;, 2013, pp. 1495–1504.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://ash.id.au/post/2014/08/13/research-proposal/&quot;&gt;Research Proposal&lt;/a&gt; was originally published by Ash Tyndall at &lt;a href=&quot;http://ash.id.au&quot;&gt;his personal blog&lt;/a&gt; on August 13, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Shortlisting Hardware]]></title>
+  <link rel="alternate" type="text/html" href="http://ash.id.au/post/2014/08/05/shortlisting-hardware/?utm_source=rss&amp;utm_campaign=blog&amp;utm_medium=post"/>
+  <id>http://ash.id.au/post/2014/08/05/shortlisting-hardware</id>
+  <published>2014-08-05T00:00:00+08:00</published>
+  <updated>2014-08-05T00:00:00+08:00</updated>
+  <author>
+    <name>Ash Tyndall</name>
+    <uri>http://ash.id.au</uri>
+    <email>hi@ash.id.au</email>
+  </author>
+  <content type="html">&lt;p&gt;I’m learning rapidly that the area of occupancy is booming at the moment, and the set of possible options for sensors and host hardware is of considerable size.&lt;/p&gt;
+
+&lt;p&gt;To help trim down my list to a set of viable and non-viable candidates, I’ve needed to come up with a more stringent set of criteria, and measure possible solutions against them.&lt;/p&gt;
+
+&lt;h1 id=&quot;criteria&quot;&gt;Criteria&lt;/h1&gt;
+&lt;p&gt;The set of criteria I am attempting to optimise for are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Cost&lt;/strong&gt;; the set of components required should aim to minimise cost, as these devices are intended to be deployed in situations where the user may not have much money.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Invasiveness&lt;/strong&gt;; the sensors used in the system should gather as little information as necessary to achieve the detection goal; there are privacy concerns with the use of high-definition sensors.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Energy Efficiency&lt;/strong&gt;; the system may be placed in a situation where there is no access to mains power, so ability to survive for long periods on only battery power is advantageous.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Reliability&lt;/strong&gt;; the system should be able to operate without user intervention or frequent maintenance, and should be able to perform its multi-occupant detection goal with a high degree of accuracy.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;host-options&quot;&gt;Host options&lt;/h1&gt;
+&lt;p&gt;There are are a variety of options for configurations that can host the sensor:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Raspberry Pi (battery)&lt;/strong&gt;: A Raspberry Pi with a set of sensors connected to it operates on a rechargeable battery pack.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Raspberry Pi &amp;amp; Sleepy Pi (battery)&lt;/strong&gt;: A Raspberry Pi with the &lt;a href=&quot;http://spellfoundry.com/products/sleepy-pi/&quot;&gt;Sleepy Pi&lt;/a&gt; addon operates on a wake-sleep cycle with a set of sensors connected to it.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Arduino (battery)&lt;/strong&gt;: An Arduino board with a set of sensors connected operates on a rechargeable battery pack, with on board data processing.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Raspberry Pi (mains), Arduino (battery)&lt;/strong&gt;: An Arduino board with a set of sensors connected operates on a rechargeable battery pack. A Raspberry Pi communicates with it and handles the data processing aspect.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;TMote Sky (battery)&lt;/strong&gt;: A MoteIV Tmote Sky, the same as that used in the ThermoSense paper. &lt;a href=&quot;#beltran2013thermosense&quot;&gt;[1]&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;sensor-options&quot;&gt;Sensor options&lt;/h1&gt;
+&lt;p&gt;There are similarly a variety of sensors that can either be used directly, or act as proxies for occupancy in a given area.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Thermal Array&lt;/strong&gt;: A thermal array is used to measure temperatures in different sections of a room. The use of them to detect occupancy is covered in multiple papers. &lt;a href=&quot;#erickson2013thermosense&quot;&gt;[2]&lt;/a&gt;, &lt;a href=&quot;#erickson2013toss&quot;&gt;[3]&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Tagging&lt;/strong&gt;: By assuming occupants have smartphones, it is possible to use them as a proxy for occupancy. &lt;a href=&quot;#kleiminger2013using&quot;&gt;[4]&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Ultrasonic&lt;/strong&gt;: Through the use of ultrasonic measurement of distance, passage through doorways can be directionally measured. &lt;a href=&quot;#hnat2012doorjamb&quot;&gt;[5]&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Power Consumption&lt;/strong&gt;: By assuming occupants will switch on electronic devices when they enter a room, broad power consumption can act as a proxy for occupancy. &lt;a href=&quot;#kleiminger2013occupancy&quot;&gt;[6]&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Network traffic&lt;/strong&gt;: By assuming occupants will use computers when they enter a room, network traffic can act as a proxy for occupancy. &lt;a href=&quot;#ting2013occupancy&quot;&gt;[7]&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Cameras&lt;/strong&gt;: Computer Vision algorithms can be used on video and images to determine the number of people present in the scene. &lt;a href=&quot;#erickson2013poem&quot;&gt;[8]&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Fusion&lt;/strong&gt;: Multiple different solutions can be combined to help optimise over multiple criteria. &lt;a href=&quot;#yang2012multi&quot;&gt;[9]&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;comparison&quot;&gt;Comparison&lt;/h1&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Host&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Cost&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Energy Efficiency&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;RPi&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;$50&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1000mA&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;RPi &amp;amp; SleepyPi&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;$105&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;dependent&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Arduino Yun&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;$70&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;500MA&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Arduino Uno&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;$125&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;50mA&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;TMote Sky&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;$105&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;25mA&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Cost includes that of compatible 802.11 adaptor if it doesn’t have built in wireless capabilities.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Sensor&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Type&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Cost&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Invasiveness&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Reliability&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Grid-Eye&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Thermal&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;$30&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Low&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;High&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;802.11 card&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Tagging&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;$15&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Low&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Medium&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;HC-SR04&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Ultrasonic&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;$5&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Low&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Low&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;OV7670&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Camera (Arduino)&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;$10&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;High&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Low&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;OV5647&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Camera (RPi)&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;$40&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;High&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;High&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;I’ll be evaluating these options over the next week.&lt;/p&gt;
+
+&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;beltran2013thermosense&quot;&gt;A. Beltran, V. L. Erickson, and A. E. Cerpa, “ThermoSense: Occupancy Thermal Based Sensing for HVAC Control,” in &lt;i&gt;Proceedings of the 5th ACM Workshop on Embedded Systems For Energy-Efficient Buildings&lt;/i&gt;, 2013, pp. 1–8.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;erickson2013thermosense&quot;&gt;V. L. Erickson, A. Beltran, D. A. Winkler, N. P. Esfahani, J. R. Lusby, and A. E. Cerpa, “ThermoSense: thermal array sensor networks in building management,” in &lt;i&gt;Proceedings of the 11th ACM Conference on Embedded Networked Sensor Systems&lt;/i&gt;, 2013, p. 87.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;erickson2013toss&quot;&gt;V. L. Erickson, A. Beltran, D. A. Winkler, N. P. Esfahani, J. R. Lusby, and A. E. Cerpa, “TOSS: Thermal Occupancy Sensing System,” in &lt;i&gt;Proceedings of the 5th ACM Workshop on Embedded Systems For Energy-Efficient Buildings&lt;/i&gt;, 2013, pp. 1–2.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;kleiminger2013using&quot;&gt;W. Kleiminger, C. Beckel, A. Dey, and S. Santini, “Using unlabeled Wi-Fi scan data to discover occupancy patterns of private households,” in &lt;i&gt;Proceedings of the 11th ACM Conference on Embedded Networked Sensor Systems&lt;/i&gt;, 2013, p. 47.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;hnat2012doorjamb&quot;&gt;T. W. Hnat, E. Griffiths, R. Dawson, and K. Whitehouse, “Doorjamb: unobtrusive room-level tracking of people in homes using doorway sensors,” in &lt;i&gt;Proceedings of the 10th ACM Conference on Embedded Network Sensor Systems&lt;/i&gt;, 2012, pp. 309–322.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;kleiminger2013occupancy&quot;&gt;W. Kleiminger, C. Beckel, T. Staake, and S. Santini, “Occupancy detection from electricity consumption data,” in &lt;i&gt;Proceedings of the 5th ACM Workshop on Embedded Systems For Energy-Efficient Buildings&lt;/i&gt;, 2013, pp. 1–8.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;ting2013occupancy&quot;&gt;K. Ting, R. Yu, and M. Srivastava, “Occupancy inferencing from non-intrusive data sources,” in &lt;i&gt;Proceedings of the 5th ACM Workshop on Embedded Systems For Energy-Efficient Buildings&lt;/i&gt;, 2013, pp. 1–2.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;erickson2013poem&quot;&gt;V. L. Erickson, S. Achleitner, and A. E. Cerpa, “POEM: Power-efficient occupancy-based energy management system,” in &lt;i&gt;Proceedings of the 12th international conference on Information processing in sensor networks&lt;/i&gt;, 2013, pp. 203–216.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;yang2012multi&quot;&gt;Z. Yang, N. Li, B. Becerik-Gerber, and M. Orosz, “A multi-sensor based occupancy estimation model for supporting demand driven HVAC operations,” in &lt;i&gt;Proceedings of the 2012 Symposium on Simulation for Architecture and Urban Design&lt;/i&gt;, 2012, p. 2.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;
+
+
+  &lt;p&gt;&lt;a href=&quot;http://ash.id.au/post/2014/08/05/shortlisting-hardware/&quot;&gt;Shortlisting Hardware&lt;/a&gt; was originally published by Ash Tyndall at &lt;a href=&quot;http://ash.id.au&quot;&gt;his personal blog&lt;/a&gt; on August 05, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[The Sensing Trifecta]]></title>
+  <link rel="alternate" type="text/html" href="http://ash.id.au/post/2014/07/31/the-sensing-trifecta/?utm_source=rss&amp;utm_campaign=blog&amp;utm_medium=post"/>
+  <id>http://ash.id.au/post/2014/07/31/the-sensing-trifecta</id>
+  <published>2014-07-31T00:00:00+08:00</published>
+  <updated>2014-07-31T00:00:00+08:00</updated>
+  <author>
+    <name>Ash Tyndall</name>
+    <uri>http://ash.id.au</uri>
+    <email>hi@ash.id.au</email>
+  </author>
+  <content type="html">&lt;p&gt;One of the primary goals in my &lt;a href=&quot;/post/2014/07/25/beginnings/&quot;&gt;research into occupancy&lt;/a&gt; is to meet The Trifecta; low cost, low power consumption, easy assembly. This is proving to be a goal not easily achieved.&lt;/p&gt;
+
+&lt;p&gt;A paper recommended to me shows prior work in a system called &lt;a href=&quot;http://dl.acm.org/citation.cfm?id=2528301&quot;&gt;ThermoSense&lt;/a&gt;. ThermoSense uses a &lt;a href=&quot;http://pewa.panasonic.com/components/built-in-sensors/infrared-array-sensors/grid-eye/&quot;&gt;Phillips Grid-EYE&lt;/a&gt;, which provides an 8x8 grid of temperature measurements that when mounted on a ceiling allow the measurement of the temperature in different sections of a room, and the extrapolation of occupancy therein.&lt;/p&gt;
+
+&lt;h1 id=&quot;sensors&quot;&gt;Sensors&lt;/h1&gt;
+
+&lt;p&gt;From the research I have done thusfar, the Grid-EYE would meet the cost requirements, with it being only around $30USD from &lt;a href=&quot;http://www.digikey.com/product-highlights/us/en/panasonic-grid-eye/2108&quot;&gt;DigiKey&lt;/a&gt;, however, it would require the manual development of a PCB to solder it on to, which would present significant difficulty given its size.&lt;/p&gt;
+
+&lt;p&gt;DigiKey offers an &lt;a href=&quot;http://www.digikey.com/product-detail/en/DKSB1015A/906-1002-ND/4360804&quot;&gt;evaluation board&lt;/a&gt;, but this board is significantly more expensive.&lt;/p&gt;
+
+&lt;p&gt;An alternative that could potentially be breadboarded unlike the Grid-EYE is the &lt;a href=&quot;http://www.melexis.com/Infrared-Thermometer-Sensors/Infrared-Thermometer-Sensors/FIRray16X4-Far-InfraRed-Array-776.aspx&quot;&gt;MLX90620&lt;/a&gt;, but it is both more expensive (around $85USD) and in an inconvenient arrangement of 16x4 instead of the Grid-EYE’s 8x8.&lt;/p&gt;
+
+&lt;p&gt;Moving out of thermal completely, some &lt;a href=&quot;http://dl.acm.org/citation.cfm?id=2426687&quot;&gt;interesting research&lt;/a&gt; has also been done into using ultrasonic ranging modules like the &lt;a href=&quot;http://www.micropik.com/PDF/HCSR04.pdf&quot;&gt;HC-SR04&lt;/a&gt;, which are much cheaper, but also would require a very different design.&lt;/p&gt;
+
+&lt;h1 id=&quot;power-consumption&quot;&gt;Power consumption&lt;/h1&gt;
+
+&lt;p&gt;Another concern that must be addressed is reducing the power consumption of the Raspberry Pi if it was to be used in this arrangement; a battery powered device of this nature should last at least a couple of weeks.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;http://www.raspberrypi.org/help/faqs/#powerReqs&quot;&gt;RPi website&lt;/a&gt; suggests that the model B consumes between 700-1000mA @ 5V, which with a reasonably sized battery would lead to a very poor lifespan if left on continuously.&lt;/p&gt;
+
+&lt;p&gt;One possible solution to this was the &lt;a href=&quot;http://spellfoundry.com/products/sleepy-pi/&quot;&gt;Sleepy Pi&lt;/a&gt;, which uses a low powered Arduino board acting as a sort of watchdog to sleep and wake the RPi as necessary. With such an arrangement, the RPi could wake up at relatively long intervals (5-30 minutes), make measurements, and then sleep again. The Arduino could also be programmed to wake the RPi based information gleaned from a &lt;a href=&quot;http://en.wikipedia.org/wiki/Passive_infrared_sensor&quot;&gt;passive infrared sensor&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;However, using the Sleepy Pi goes against the concept of the occupancy determination being accessible in a &lt;a href=&quot;http://en.wikipedia.org/wiki/Representational_state_transfer&quot;&gt;RESTful&lt;/a&gt; way.&lt;/p&gt;
+
+&lt;p&gt;In a different vein, a system could be devised in which an low powered sensor on a battery (or energy harvesting device) reported back raw measurements on an energy efficient wireless link to a wall-socket-powered RPi, which could be responsible for the interpretation and RESTful serving of this data on a powered link.&lt;/p&gt;
+
+&lt;p&gt;Ideally, this could be the &lt;a href=&quot;https://code.google.com/p/mosquino/&quot;&gt;Mosquino&lt;/a&gt;, but the lack of manufacturing presents a difficulty in using that board specifically. This also brings back issues with integrating appropriate sensors (the Grid-EYE evaluation board requires USB support).&lt;/p&gt;
+
+&lt;p&gt;Finally, energy harvesting sensors like those provided by EnOcean could be used in conjunction with the &lt;a href=&quot;http://www.enocean.com/en/enocean-pi/&quot;&gt;EnOcean Pi module&lt;/a&gt; in a similar vein as the Arduino/RPi model, but with further power savings.&lt;/p&gt;
+
+&lt;p&gt;More research is needed.&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://ash.id.au/post/2014/07/31/the-sensing-trifecta/&quot;&gt;The Sensing Trifecta&lt;/a&gt; was originally published by Ash Tyndall at &lt;a href=&quot;http://ash.id.au&quot;&gt;his personal blog&lt;/a&gt; on July 31, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Beginnings]]></title>
+  <link rel="alternate" type="text/html" href="http://ash.id.au/post/2014/07/25/beginnings/?utm_source=rss&amp;utm_campaign=blog&amp;utm_medium=post"/>
+  <id>http://ash.id.au/post/2014/07/25/beginnings</id>
+  <published>2014-07-25T00:00:00+08:00</published>
+  <updated>2014-07-25T00:00:00+08:00</updated>
+  <author>
+    <name>Ash Tyndall</name>
+    <uri>http://ash.id.au</uri>
+    <email>hi@ash.id.au</email>
+  </author>
+  <content type="html">&lt;p&gt;I’m beginning my honours course in the UWA School of Computer Science and Software Engineering this month. I’m being supervised by &lt;a href=&quot;http://people.csse.uwa.edu.au/rachel/&quot;&gt;Rachel Cardell-Oliver&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I’m planning to use this blog (powered by Jekyll) as a dumping ground for my current thoughts and developments on my research. Hopefully if I can get fully immersed in it, I’ll reap the rewards of that additional focus.&lt;/p&gt;
+
+&lt;p&gt;Currently, the area I intend to explore involves finding a low-cost way of determining occupancy in a given area. Ideally it’ll involve a novel combination of sensors attached to a Raspberry Pi.&lt;/p&gt;
+
+&lt;p&gt;This week I’ll be reading some papers in the area, and investigating the sensors available for the RPi.&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://ash.id.au/post/2014/07/25/beginnings/&quot;&gt;Beginnings&lt;/a&gt; was originally published by Ash Tyndall at &lt;a href=&quot;http://ash.id.au&quot;&gt;his personal blog&lt;/a&gt; on July 25, 2014.&lt;/p&gt;</content>
+</entry>
+
 
 </feed>
