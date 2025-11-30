@@ -12,8 +12,7 @@ url:              http://ash.id.au
 owner:
   name:           Ash Tyndall
   email:          hi@ash.id.au
-  # Social networking links used in footer. Update and remove as you like.
-  twitter: atyndall            
+  # Social networking links used in footer. Update and remove as you like.     
   github: atyndall         
   linkedin: ashtyndall/   
 
