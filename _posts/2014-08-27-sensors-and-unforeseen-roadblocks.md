@@ -8,9 +8,9 @@ tags: honours
 
 One thing that I've learned in the past few weeks is that your setbacks can emerge from nowhere, and aren't necessarily within your control, or even your field.
 
-[Rachel](http://people.csse.uwa.edu.au/rachel/) and I agreed that the project should begin with a more general investigation of the sensor capabilities and requirements (the [reliability]({% post_url 2014-08-13-research-proposal %}#aim) criteria) before branching out into the other areas.
+[Rachel](https://people.csse.uwa.edu.au/rachel/) and I agreed that the project should begin with a more general investigation of the sensor capabilities and requirements (the [reliability]({% post_url 2014-08-13-research-proposal %}#aim) criteria) before branching out into the other areas.
 
-However when we went to order the Grid-EYE from [Digi-Key](http://www.digikey.com/product-highlights/us/en/panasonic-grid-eye/2108), one of the best contenders in the [options examined]({% post_url 2014-08-05-shortlisting-hardware %}#sensor-options) we were presented with the following message upon clicking "Add to Cart";
+However when we went to order the Grid-EYE from [Digi-Key](https://www.digikey.com/product-highlights/us/en/panasonic-grid-eye/2108), one of the best contenders in the [options examined]({% post_url 2014-08-05-shortlisting-hardware %}#sensor-options) we were presented with the following message upon clicking "Add to Cart";
 
 >Due to U.S. export controls, we are unable to add this item to your order.
 
@@ -28,7 +28,7 @@ This was very disappointing. The Grid-EYE was looking to be one of the best sens
 
 # The Alternative
 
-For now, we've decided to investigate the [Melexis MLX90620](http://www.melexis.com/Infrared-Thermometer-Sensors/Infrared-Thermometer-Sensors/MLX90620-776.aspx) as a substitute, as it does not appear to have similar ordering restrictions and seems to be based on similar technologies.
+For now, we've decided to investigate the [Melexis MLX90620](https://www.melexis.com/Infrared-Thermometer-Sensors/Infrared-Thermometer-Sensors/MLX90620-776.aspx) as a substitute, as it does not appear to have similar ordering restrictions and seems to be based on similar technologies.
 
 The primary disadvantage of the sensor is that it is in a 16x4 array, which is far less useful for scanning a square room than the 8x8 arrangement that the Grid-EYE offers. There are videos on YouTube of people hooking the sensor up to stepper motors and rotating it on one axis to get an effective 16x16 thermal array instead. This may be an option for the project.
 

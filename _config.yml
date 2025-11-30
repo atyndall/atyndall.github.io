@@ -19,7 +19,7 @@ owner:
 # Analytics and webmaster tools stuff goes here
 google_analytics: G-ZGNW0R3VBD    
 
-# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+# https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Australia/Perth
 future:      true
 highlighter: pygments

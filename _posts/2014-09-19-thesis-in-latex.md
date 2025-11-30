@@ -9,7 +9,7 @@ tags: honours
 These recent weeks I have been working on the [literature review](https://github.com/atyndall/honours/tree/master/litreview) section of my thesis, and while doing that I've been trying to use LaTeX packages to make that experience as easy as possible. I'll outline some of the things I've done here.
 
 ## Use `subfiles` for a modular thesis
-The first thing I realised was that my thesis is going to very quickly get unwieldy if it is all contained in one document. I did some research, and I found that the [`subfiles`](http://www.ctan.org/tex-archive/macros/latex/contrib/subfiles) package was well suited to my situation.
+The first thing I realised was that my thesis is going to very quickly get unwieldy if it is all contained in one document. I did some research, and I found that the [`subfiles`](https://www.ctan.org/tex-archive/macros/latex/contrib/subfiles) package was well suited to my situation.
 
 `subfiles` allows you to have separate LaTeX files for different chapters, while allowing you to still compile both the chapters separately, and the whole document. This is great, as while I'm working on the literature review section, for instance, I don't want to waste my time compiling my whole thesis document when all I care about is one section.
 
@@ -96,7 +96,7 @@ One way to solve this problem is to have a copy of your `.cls` file in each subf
 
 ## Acronyms and abbreviations
 
-If you're like me and doing a thesis in an area with a lot of tech, chances are you're going to be using a lot of acronyms and abbreviations to describe things. I've found both the [`acronyms`](http://www.ctan.org/tex-archive/macros/latex/contrib/acronym) and [`abbrevs`](http://www.ctan.org/tex-archive/macros/latex/contrib/frankenstein) packages useful for this.
+If you're like me and doing a thesis in an area with a lot of tech, chances are you're going to be using a lot of acronyms and abbreviations to describe things. I've found both the [`acronyms`](https://www.ctan.org/tex-archive/macros/latex/contrib/acronym) and [`abbrevs`](https://www.ctan.org/tex-archive/macros/latex/contrib/frankenstein) packages useful for this.
 
 Here is part of my `thesis/thesis.tex` header;
 
@@ -139,7 +139,7 @@ which I find very convenient.
 
 ## `fancyref` support for subsections
 
-I also use the [`fancyref`](http://www.ctan.org/tex-archive/macros/latex/contrib/fancyref) package for cross-referencing. `fancyref` provides a much smarter cross-referencing system that automatically describes the type of thing you're referencing, and the page it is on.
+I also use the [`fancyref`](https://www.ctan.org/tex-archive/macros/latex/contrib/fancyref) package for cross-referencing. `fancyref` provides a much smarter cross-referencing system that automatically describes the type of thing you're referencing, and the page it is on.
 
 One thing that `fancyref` doesn't seem to have support for is referencing subsections. If you add these commands to your document header, it should be able to reference them;
 
@@ -158,4 +158,4 @@ One thing that `fancyref` doesn't seem to have support for is referencing subsec
 {% endhighlight %}
 
 
-These are just some of the things I've done to improve my thesis' LaTeX experience. You can see all of my changes on its [repository page](http://github.com/atyndall/honours).
+These are just some of the things I've done to improve my thesis' LaTeX experience. You can see all of my changes on its [repository page](https://github.com/atyndall/honours).

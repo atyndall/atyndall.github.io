@@ -1,3 +1,3 @@
-Sitemap: http://ash.id.au/sitemap.xml
+Sitemap: https://ash.id.au/sitemap.xml
 User-agent: *
 Disallow: /node_modules/

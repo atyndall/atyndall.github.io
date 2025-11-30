@@ -21,7 +21,7 @@ figure {
 
 Australia faces many challenges; aging populations, rising energy prices and environmental sustainable concerns. By estimating the number of people within spaces, CountIR enables smart homes and offices that can address these issues. Leveraging machine learning and increasingly cheap thermal sensors and embedded computers, CountIR is accurate, robust, low-cost and privacy-preserving.
 
-CountIR was a finalist for the [WAITTA INCITE Awards](http://www.inciteawards.org.au/) Best Student Project of the Year. Ash and CountIR were recognised as one of seven total finalists, and one of only three non-group finalists.
+CountIR was a finalist for the [WAITTA INCITE Awards](https://www.inciteawards.org.au/) Best Student Project of the Year. Ash and CountIR were recognised as one of seven total finalists, and one of only three non-group finalists.
 
 CountIR is the product of Ash's Honours thesis, which was developed in 2015. Ash received first-class honours for CountIR from the University of Western Australia, and the results of his research were published in the prestigious IEEE Sensors Journal. <small>([view/download paper](/publications/JSEN.2016.2530824.html))</small>
 

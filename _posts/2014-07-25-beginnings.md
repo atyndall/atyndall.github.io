@@ -6,7 +6,7 @@ comments: true
 tags: honours
 ---
 
-I'm beginning my honours course in the UWA School of Computer Science and Software Engineering this month. I'm being supervised by [Rachel Cardell-Oliver](http://people.csse.uwa.edu.au/rachel/).
+I'm beginning my honours course in the UWA School of Computer Science and Software Engineering this month. I'm being supervised by [Rachel Cardell-Oliver](https://people.csse.uwa.edu.au/rachel/).
 
 I'm planning to use this blog (powered by Jekyll) as a dumping ground for my current thoughts and developments on my research. Hopefully if I can get fully immersed in it, I'll reap the rewards of that additional focus.
 

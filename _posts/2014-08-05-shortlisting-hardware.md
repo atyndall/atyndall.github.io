@@ -26,7 +26,7 @@ There are are a variety of options for configurations that can host the sensor:
 
 * **Raspberry Pi (battery)**: A Raspberry Pi with a set of sensors connected to it operates on a rechargeable battery pack.
 
-* **Raspberry Pi & Sleepy Pi (battery)**: A Raspberry Pi with the [Sleepy Pi](http://spellfoundry.com/products/sleepy-pi/) addon operates on a wake-sleep cycle with a set of sensors connected to it.
+* **Raspberry Pi & Sleepy Pi (battery)**: A Raspberry Pi with the [Sleepy Pi](https://spellfoundry.com/products/sleepy-pi/) addon operates on a wake-sleep cycle with a set of sensors connected to it.
 
 * **Arduino (battery)**: An Arduino board with a set of sensors connected operates on a rechargeable battery pack, with on board data processing.
 

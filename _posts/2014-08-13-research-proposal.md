@@ -6,7 +6,7 @@ comments: true
 tags: honours
 ---
 
-This week I drafted and submitted my research proposal. Here is a copy converted to markdown. You can find the original in my [honours git repo](http://github.com/atyndall/honours).
+This week I drafted and submitted my research proposal. Here is a copy converted to markdown. You can find the original in my [honours git repo](https://github.com/atyndall/honours).
 
 # Non-Technical Summary
 With the proportion of elderly and mobility-impaired people growing, and the cost of small computing platforms and sensors dropping, now more than ever we can create low-cost sensor systems to use in a "smart home for the disabled." One such sensor system is an occupancy sensor, which determines the number of people who are present in a given space. This has many applications in a such a smart home, like climate control, which studies have shown can be more efficient when computer controlled in this way.
@@ -16,7 +16,7 @@ This project will build on existing research to create an occupancy sensor and a
 # Background
 The proportion of elderly and mobility-impaired people is predicted to grow dramatically over the next century, leaving a large proportion of the population unable to care for themselves, and consequently less people able care for these groups. {% cite chan2009smart %} With this issue looming, investments are being made into a variety of technologies that can provide the support these groups need to live independent of human assistance. 
 
-With recent advancements in low cost embedded computing, such as the [Arduino](http://arduino.cc/en/Guide/Introduction) and [Raspberry Pi](http://www.raspberrypi.org/), the ability to provide a set of interconnected sensors, actuators and interfaces to enable a low-cost "smart home for the disabled" is becoming increasingly achievable.
+With recent advancements in low cost embedded computing, such as the [Arduino](https://arduino.cc/en/Guide/Introduction) and [Raspberry Pi](https://www.raspberrypi.org/), the ability to provide a set of interconnected sensors, actuators and interfaces to enable a low-cost "smart home for the disabled" is becoming increasingly achievable.
 
 Sensing techniques to determine occupancy, the detection of the presence and number of people in an area, are of particular use to the elderly and disabled. Detection can be used to inform various devices that change state depending on the user's location, including the better regulation energy hungry devices to help reduce financial burden. Household climate control, which in some regions of Australia accounts for up to 40% of energy usage {% cite abs4602 %} is one particular area in which occupancy detection can reduce costs, as efficiency can be increased dramatically with annual energy savings of up to 25% found in some cases. {% cite erickson2013thermosense %}
 
@@ -93,11 +93,11 @@ A large part of this research project is determining the specific hardware and s
 
 A budget of up to $300 has been allocated by my supervisor for project purchases. Some technologies with promise that will be investigated include;
 
-* **Raspberry Pi Model B+** Small form-factor Linux computer: Available from [here](http://arduino.cc/en/Guide/Introduction); $38
+* **Raspberry Pi Model B+** Small form-factor Linux computer: Available from [here](https://arduino.cc/en/Guide/Introduction); $38
 
-* **Arduino Uno** Small form-factor microcontroller: Available from [here](http://arduino.cc/en/Main/arduinoBoardUno); $36
+* **Arduino Uno** Small form-factor microcontroller: Available from [here](https://arduino.cc/en/Main/arduinoBoardUno); $36
 
-* **Panasonic Grid-EYE** Infrared Array Sensor: Available from [here](http://www3.panasonic.biz/ac/e/control/sensor/infrared/grid-eye/index.jsp); approx. $33
+* **Panasonic Grid-EYE** Infrared Array Sensor: Available from [here](https://www3.panasonic.biz/ac/e/control/sensor/infrared/grid-eye/index.jsp); approx. $33
 
 * **Passive Infrared Sensor** Available from various places; $10-$20
 
