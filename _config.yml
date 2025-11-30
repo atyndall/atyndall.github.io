@@ -6,7 +6,7 @@ logo:             square200.jpg
 disqus_shortname: atyndall
 search:           true
 # Change url to your domain. Leave localhost server or blank when working locally.
-url:              http://ash.id.au
+url:              https://ash.id.au
 
 # Owner/author information
 owner:
