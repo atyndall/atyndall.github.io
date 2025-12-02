@@ -8,6 +8,7 @@ require 'jekyll'
 
 desc "Generate blog files"
 task :generate do
+	ENV['JEKYLL_ENV'] = 'production'
 	Jekyll::Site.new(Jekyll.configuration({
 	"source"      => ".",
 	"destination" => "_site"

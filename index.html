@@ -3,10 +3,7 @@ title: atyndall
 description: "Ash is a CTO and principal engineer who designs, builds and scales SaaS platforms. He transforms complex business problems into stable commercial outcomes."
 ---
 <!doctype html>
-<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<html class="no-js" lang="en">
 <head>
 {% include head.html %}
 </head>
@@ -16,9 +13,9 @@ description: "Ash is a CTO and principal engineer who designs, builds and scales
 <header class="masthead">
   <div class="wrap">
         {% if site.logo != null %}
-        <a href="{{ site.url }}" class="site-logo" rel="home" title="{{ site.title }}"><img src="{{ site.url }}/images/{{ site.logo }}" width="200" height="200" alt="{{ site.title }} logo" class="animated bounceInDown"></a>
+        <a href="/" class="site-logo" rel="home" title="{{ site.title }}"><img src="/images/{{ site.logo }}" width="200" height="200" alt="{{ site.title }} logo" class="animated bounceInDown"></a>
         {% endif %}
-        <h1 class="site-title animated fadeIn"><a href="{{ site.url }}">Ash Tyndall</a></h1>
+        <h1 class="site-title animated fadeIn"><a href="/">Ash Tyndall</a></h1>
 
         <div class="animated fadeIn" id="infotext">
           <p>Ash is a Chief Technology Officer and principal software engineer who designs, builds and scales SaaS platforms from early architecture through to large scale production systems. His expertise lies in transforming complex business problems into stable commercial outcomes, spanning executive leadership, technical strategy, security, and reliability on modern cloud platforms.</p>
