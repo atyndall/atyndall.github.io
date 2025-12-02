@@ -20,6 +20,7 @@ owner:
   linkedin: ashtyndall/   
 
 jekyll-minifier:
+  exclude: '*.xml'
   preserve_php: true
   remove_spaces_inside_tags: true
   remove_multi_spaces: true
